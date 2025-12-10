@@ -5,3 +5,10 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+nav a {
+  transition: opacity 0.2s ease;
+}
+nav a:hover {
+  opacity: 0.7;
+}
