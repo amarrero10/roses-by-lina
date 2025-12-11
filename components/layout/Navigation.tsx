@@ -7,12 +7,13 @@ import { Menu, X } from "lucide-react";
 import { Instagram, Facebook } from "@deemlol/next-icons";
 import logo from "@/public/logo.jpg"; // adjust your logo path
 import TikTok from "../ui/TikTok";
+import Button from "../ui/Button";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="relative w-[70%] mx-auto">
+    <nav className="relative w-[70%] mx-auto bg-black ">
       {/* Top bar */}
       <div className="flex items-center justify-between px-8 py-4">
         <div className="flex items-center gap-2">
@@ -22,7 +23,7 @@ const Navigation = () => {
         {/* Hamburger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="text-red-400 hover:opacity-80 transition"
+          className="text-white hover:opacity-80 transition cursor-pointer "
         >
           {isOpen ? <X size={32} /> : <Menu size={32} />}
         </button>
@@ -34,7 +35,7 @@ const Navigation = () => {
           isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="flex flex-col items-left px-4 py-36 space-y-6 text-8xl font-medium">
+        <div className="flex flex-col items-left px-4 py-24 space-y-6 text-8xl font-medium">
           <Link href="/" onClick={() => setIsOpen(false)}>
             Home
           </Link>
