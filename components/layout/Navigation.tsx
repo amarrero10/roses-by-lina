@@ -7,23 +7,24 @@ import { Menu, X } from "lucide-react";
 import { Instagram, Facebook } from "@deemlol/next-icons";
 import logo from "@/public/logo.jpg"; // adjust your logo path
 import TikTok from "../ui/TikTok";
-import Button from "../ui/Button";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="relative w-[70%] mx-auto bg-black ">
+    <nav className="relative mx-auto bg-black px-96 ">
       {/* Top bar */}
       <div className="flex items-center justify-between px-8 py-4">
         <div className="flex items-center gap-2">
-          <Image src={logo} alt="Logo" width={60} height={60} className="rounded" />
+          <Link href="/">
+            <Image src={logo} alt="Logo" width={60} height={60} className="rounded" />
+          </Link>
         </div>
 
         {/* Hamburger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="text-white hover:opacity-80 transition cursor-pointer "
+          className="text-primary-white hover:opacity-80 transition cursor-pointer "
         >
           {isOpen ? <X size={32} /> : <Menu size={32} />}
         </button>
@@ -31,7 +32,7 @@ const Navigation = () => {
 
       {/* Dropdown menu */}
       <div
-        className={`absolute top-full left-0 w-full bg-black  text-white transition-all duration-500 ease-in-out overflow-hidden ${
+        className={`absolute top-full left-0 w-full bg-black text-primary-white transition-all duration-500 ease-in-out overflow-hidden ${
           isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >

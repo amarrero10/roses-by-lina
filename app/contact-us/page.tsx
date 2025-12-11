@@ -3,6 +3,7 @@
 import { FC } from "react";
 import { useForm } from "react-hook-form";
 import { sendEmail } from "@/utils/send-email";
+import Button from "@/components/ui/Button";
 
 export type FormData = {
   name: string;
@@ -38,6 +39,7 @@ const Contact: FC = () => {
         </label>
         <input
           type="tel"
+          maxLength={10}
           placeholder="813-555-5555"
           className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
           {...register("phone", { required: true })}
@@ -66,9 +68,7 @@ const Contact: FC = () => {
         ></textarea>
       </div>
       <div>
-        <button className="hover:shadow-form rounded-md bg-purple-500 py-3 px-8 text-base font-semibold text-white outline-none">
-          Submit
-        </button>
+        <Button>Submit</Button>
       </div>
     </form>
   );

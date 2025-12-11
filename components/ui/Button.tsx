@@ -1,10 +1,16 @@
 // Button.jsx
 import React from "react";
 
-const Button = ({ children, onClick, className = "", ...props }) => {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
+  onClick?: () => void;
+  className?: string;
+}
+
+const Button: React.FC<ButtonProps> = ({ children, onClick, className = "", ...props }) => {
   return (
     <button
-      className={`px-4 py-2 rounded-md font-semibold text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 ${className}`}
+      className={`px-4 py-2 rounded-md font-semibold text-white bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 ${className} hover:cursor-pointer`}
       onClick={onClick}
       {...props}
     >

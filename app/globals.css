@@ -13,3 +13,25 @@ nav a {
 nav a:hover {
   opacity: 0.7;
 }
+
+:root {
+  --color-primary: #fefefe;
+  --color-secondary: #78a57b;
+  --color-accent: #141616;
+  --button-text: #fefefe;
+  --button-bg: #141616;
+  --main-text: #c7a552;
+  --secondary-text: #78a57b;
+  --accent-text: #d7b7f0;
+}
+
+@theme inline {
+  --color-primary-white: var(--color-primary);
+  --color-secondary-green: var(--color-secondary);
+  --color-accent-black: var(--color-accent);
+  --color-button-text-white: var(--button-text);
+  --color-button-bg-black: var(--button-bg);
+  --color-main-text-gold: var(--main-text);
+  --color-secondary-text-green: var(--secondary-text);
+  --color-accent-text-purple: var(--accent-text);
+}
