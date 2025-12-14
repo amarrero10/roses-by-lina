@@ -76,7 +76,7 @@ export default function HomeGallery() {
 
   return (
     <div className="h-[400vh] relative" ref={container}>
-      <div className=" sticky top-0 h-[100vh] bg-accent-black overflow-hidden ">
+      <div className=" sticky top-0 h-screen bg-accent-black overflow-hidden ">
         {pictures.map(({ src, scale }, index) => {
           return (
             <motion.div

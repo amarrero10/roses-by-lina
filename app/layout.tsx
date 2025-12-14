@@ -1,6 +1,26 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/components/layout/Navigation";
+import { Poppins, Playfair_Display, Montserrat } from "next/font/google";
+import Footer from "@/components/layout/Footer";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  weight: ["400", "500", "600", "700"],
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  weight: ["300", "400", "500", "600"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,9 +34,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body
+        className={`${playfair.variable} ${montserrat.variable} ${poppins.variable} antialiased h-screen`}
+      >
         <Navigation />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -7,6 +7,13 @@ import { Menu, X } from "lucide-react";
 import { Instagram, Facebook } from "@deemlol/next-icons";
 import logo from "@/public/logo.jpg"; // adjust your logo path
 import TikTok from "../ui/TikTok";
+import { motion } from "framer-motion";
+
+type FlipLinkProps = {
+  href: string;
+  children: string;
+  onClick?: () => void;
+};
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,55 +40,104 @@ const Navigation = () => {
       {/* Dropdown menu */}
       <div
         className={`absolute top-full left-0 w-full bg-accent-black text-primary-white transition-all duration-500 ease-in-out overflow-hidden ${
-          isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
+          isOpen ? "h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="flex flex-col items-left px-4 py-24 space-y-6 text-8xl font-medium">
-          <Link href="/" onClick={() => setIsOpen(false)}>
-            Home
-          </Link>
-          <Link href="/services" onClick={() => setIsOpen(false)}>
-            Services
-          </Link>
-          <Link href="/about" onClick={() => setIsOpen(false)}>
-            About
-          </Link>
-          <Link href="/contact-us" onClick={() => setIsOpen(false)}>
-            Contact
-          </Link>
-          <Link href="/gallery" onClick={() => setIsOpen(false)}>
-            Gallery
-          </Link>
-          <Link href="/faq" onClick={() => setIsOpen(false)}>
-            FAQ
-          </Link>
-          <div className="flex gap-4">
-            <Link
-              href="https://www.instagram.com/rosesby.lina/"
-              target="_blank"
-              onClick={() => setIsOpen(false)}
-            >
-              <Instagram size={24} color="#FEFEFE" />
-            </Link>
-            <Link
-              href="https://www.facebook.com/Rosesby.lina"
-              target="_blank"
-              onClick={() => setIsOpen(false)}
-            >
-              <Facebook size={24} color="#FEFEFE" />
-            </Link>
-            <Link
-              href="https://www.tiktok.com/@rosesby.lina"
-              target="_blank"
-              onClick={() => setIsOpen(false)}
-            >
-              <TikTok />
-            </Link>
+        <div className="flex flex-col items-left px-4 py-16 text-8xl font-medium">
+          <div className="flex flex-col gap-4 font-serif ">
+            <FlipLink href="/" onClick={() => setIsOpen(false)}>
+              Home
+            </FlipLink>
+            <FlipLink href="/services" onClick={() => setIsOpen(false)}>
+              Services
+            </FlipLink>
+            <FlipLink href="/gallery" onClick={() => setIsOpen(false)}>
+              Gallery
+            </FlipLink>
+            <FlipLink href="/faq" onClick={() => setIsOpen(false)}>
+              FAQ
+            </FlipLink>
+            <FlipLink href="/contact-us" onClick={() => setIsOpen(false)}>
+              Contact
+            </FlipLink>
+            <FlipLink href="/about-us" onClick={() => setIsOpen(false)}>
+              About
+            </FlipLink>
+            <div className="flex gap-4">
+              <Link
+                href="https://www.instagram.com/rosesby.lina/"
+                target="_blank"
+                onClick={() => setIsOpen(false)}
+              >
+                <Instagram size={24} color="#FEFEFE" />
+              </Link>
+              <Link
+                href="https://www.facebook.com/Rosesby.lina"
+                target="_blank"
+                onClick={() => setIsOpen(false)}
+              >
+                <Facebook size={24} color="#FEFEFE" />
+              </Link>
+              <Link
+                href="https://www.tiktok.com/@rosesby.lina"
+                target="_blank"
+                onClick={() => setIsOpen(false)}
+              >
+                <TikTok />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
     </nav>
   );
 };
+
+const FlipLink = ({ href, children, onClick }: FlipLinkProps) => (
+  <>
+    <motion.div
+      initial="initial"
+      whileHover="hovered"
+      className=" relative block overflow-hidden whitespace-nowrap py-2"
+    >
+      <Link href={href} onClick={onClick}>
+        <div>
+          {children.split("").map((char, i) => {
+            return (
+              <motion.span
+                key={i}
+                variants={{
+                  initial: { y: 0 },
+                  hovered: { y: "-125%" },
+                }}
+                transition={{ delay: i * 0.05, duration: 0.3, ease: "easeInOut" }}
+                className="inline-block"
+              >
+                {char}
+              </motion.span>
+            );
+          })}
+        </div>
+        <div className=" absolute inset-0 py-2">
+          {children.split("").map((char, i) => {
+            return (
+              <motion.span
+                key={i}
+                variants={{
+                  initial: { y: "125%" },
+                  hovered: { y: 0 },
+                }}
+                transition={{ delay: i * 0.05, duration: 0.3, ease: "easeInOut" }}
+                className="inline-block"
+              >
+                {char}
+              </motion.span>
+            );
+          })}
+        </div>
+      </Link>
+    </motion.div>
+  </>
+);
 
 export default Navigation;

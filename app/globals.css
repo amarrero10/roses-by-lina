@@ -23,6 +23,9 @@ nav a:hover {
   --main-text: #c7a552;
   --secondary-text: #78a57b;
   --accent-text: #d7b7f0;
+  --serif: "Playfair Display", serif;
+  --sans: "Montserrat", sans-serif;
+  --poppins: "Poppins", sans-serif;
 }
 
 @theme inline {
@@ -34,4 +37,7 @@ nav a:hover {
   --color-main-text-gold: var(--main-text);
   --color-secondary-text-green: var(--secondary-text);
   --color-accent-text-purple: var(--accent-text);
+  --font-serif: var(--serif);
+  --font-sans: var(--sans);
+  --font-poppins: var(--poppins);
 }
