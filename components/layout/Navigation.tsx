@@ -12,7 +12,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="relative mx-auto bg-black px-96 ">
+    <nav className="relative mx-auto bg-accent-black px-96 ">
       {/* Top bar */}
       <div className="flex items-center justify-between px-8 py-4">
         <div className="flex items-center gap-2">
@@ -32,7 +32,7 @@ const Navigation = () => {
 
       {/* Dropdown menu */}
       <div
-        className={`absolute top-full left-0 w-full bg-black text-primary-white transition-all duration-500 ease-in-out overflow-hidden ${
+        className={`absolute top-full left-0 w-full bg-accent-black text-primary-white transition-all duration-500 ease-in-out overflow-hidden ${
           isOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >

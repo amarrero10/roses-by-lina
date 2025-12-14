@@ -1,34 +1,102 @@
+"use client";
+
 import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import img1 from "@/public/1.jpg";
+import img2 from "@/public/2.jpg";
+import img3 from "@/public/3.jpg";
+import img4 from "@/public/4.jpg";
+import img5 from "@/public/5.jpg";
+import img6 from "@/public/6.jpg";
+import img7 from "@/public/7.jpg";
 
 export default function HomeGallery() {
-  const imgs = [
-    { src: "/1.jpg", w: 380, h: 620, y: "-40%" },
-    { src: "/2.jpg", w: 360, h: 580, y: "30%" },
-    { src: "/3.jpg", w: 460, h: 700, y: "-10%" },
-    { src: "/4.jpg", w: 600, h: 850, y: "10%" }, // large yellow flower equivalent
-    { src: "/5.jpg", w: 460, h: 560, y: "25%" },
-    { src: "/6.jpg", w: 500, h: 650, y: "2%" },
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end end"],
+  });
+
+  const scale3 = useTransform(scrollYProgress, [0, 1], [1, 3]);
+  const scale5 = useTransform(scrollYProgress, [0, 1], [1, 5]);
+  const scale6 = useTransform(scrollYProgress, [0, 1], [1, 6]);
+  const scale8 = useTransform(scrollYProgress, [0, 1], [1, 8]);
+  const scale9 = useTransform(scrollYProgress, [0, 1], [1, 9]);
+
+  const pictures = [
+    {
+      src: img1,
+      scale: scale3,
+    },
+    {
+      src: img2,
+      scale: scale5,
+    },
+    {
+      src: img3,
+      scale: scale6,
+    },
+    {
+      src: img4,
+      scale: scale5,
+    },
+    {
+      src: img5,
+      scale: scale6,
+    },
+    {
+      src: img6,
+      scale: scale8,
+    },
+    {
+      src: img7,
+      scale: scale9,
+    },
   ];
 
+  const imagePositionClasses = (index: number) => {
+    switch (index) {
+      case 1:
+        return "top-[-30vh] left-[5vw] w-[35vw] h-[30vh]";
+      case 2:
+        return "top-[-10vh] left-[-25vw] w-[20vw] h-[45vh]";
+      case 3:
+        return "left-[27.5vw] w-[25vw] h-[25vh]";
+      case 4:
+        return "top-[27.5vh] left-[5vw] w-[20vw] h-[25vh]";
+      case 5:
+        return "top-[27.5vh] left-[-22.5vw] w-[30vw] h-[25vh]";
+      case 6:
+        return "top-[22.5vh] left-[25vw] w-[15vw] h-[15vh]";
+      default:
+        return "w-[25vw] h-[25vh]"; // first child (index 0)
+    }
+  };
+
   return (
-    <section className="w-full overflow-hidden mt-20 py-10">
-      <div className="flex justify-center">
-        <div className="flex gap-10">
-          {imgs.map((img, i) => (
-            <div
-              key={i}
-              className="relative rounded-xl overflow-hidden"
-              style={{
-                width: img.w,
-                height: img.h,
-                transform: `translateY(${img.y})`,
-              }}
+    <div className="h-[400vh] relative" ref={container}>
+      <div className=" sticky top-0 h-[100vh] bg-accent-black overflow-hidden ">
+        {pictures.map(({ src, scale }, index) => {
+          return (
+            <motion.div
+              key={index}
+              style={{ scale }}
+              className=" w-full h-full absolute top-0 flex justify-center items-center "
             >
-              <Image src={img.src} alt="" fill className="object-cover" />
-            </div>
-          ))}
-        </div>
+              <div className={`${imagePositionClasses(index)} relative  `}>
+                <Image
+                  src={src}
+                  alt="some"
+                  fill
+                  placeholder="blur"
+                  className="object-cover rounded-xl"
+                />
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
-    </section>
+    </div>
   );
 }
