@@ -11,7 +11,7 @@ import img3 from "@/public/3.jpg";
 import Lenis from "lenis";
 import InfiniteText from "@/components/InfiniteText";
 import ContactForm from "@/components/ContactForm";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   const [hovered, setHovered] = useState(false);
@@ -57,7 +57,7 @@ export default function Home() {
             >
               <p> services</p>
               <span>
-                <ArrowUpRight size={46} />
+                <ArrowRight size={46} className={`${hovered ? " text-accent-text-purple" : ""}`} />
               </span>
             </Link>
 
