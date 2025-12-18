@@ -46,16 +46,19 @@ const Footer = () => {
         <div>
           <p className=" text-lg">&copy; Roses by Lina | All rights Reserved {year}</p>
         </div>
-        <div className=" flex gap-6">
-          <Link href="https://www.tiktok.com/@rosesby.lina" target="_blank">
-            <TikTok />
-          </Link>
-          <Link href="https://www.instagram.com/rosesby.lina/" target="_blank">
-            <Instagram />
-          </Link>
-          <Link href="https://www.facebook.com/Rosesby.lina" target="_blank">
-            <Facebook />
-          </Link>
+        <div>
+          <p className=" text-lg mb-2">Follow Us!</p>
+          <div className=" flex gap-6">
+            <Link href="https://www.tiktok.com/@rosesby.lina" target="_blank">
+              <TikTok />
+            </Link>
+            <Link href="https://www.instagram.com/rosesby.lina/" target="_blank">
+              <Instagram />
+            </Link>
+            <Link href="https://www.facebook.com/Rosesby.lina" target="_blank">
+              <Facebook />
+            </Link>
+          </div>
         </div>
       </div>
     </div>

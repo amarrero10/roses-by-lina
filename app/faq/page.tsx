@@ -38,7 +38,7 @@ function Faq() {
 
   return (
     <>
-      <section className="relative py-32 overflow-hidden -z-10">
+      <section className="relative py-32 overflow-hidden">
         {/* Background image */}
         <Image src={img} alt="" fill className="object-cover" priority />
 

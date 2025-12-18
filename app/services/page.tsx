@@ -4,7 +4,7 @@ import Pic1 from "../../public/1.jpg";
 import Pic2 from "../../public/2.jpg";
 import Pic3 from "../../public/3.jpg";
 import Pic4 from "../../public/4.jpg";
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
 import { useEffect, useRef } from "react";
 import Lenis from "lenis";
 import ServicesHero from "@/components/ServicesHero";
@@ -88,7 +88,7 @@ export default function Services() {
   );
 }
 
-const Section1 = ({ scrollYProgress }) => {
+const Section1 = ({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) => {
   const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 0]);
 
@@ -148,7 +148,7 @@ const Section1 = ({ scrollYProgress }) => {
 //   );
 // };
 
-const Section2 = ({ scrollYProgress }) => {
+const Section2 = ({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) => {
   const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 0]);
 
@@ -187,7 +187,7 @@ const Section2 = ({ scrollYProgress }) => {
   );
 };
 
-const Section3 = ({ scrollYProgress }) => {
+const Section3 = ({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) => {
   const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 0]);
 
@@ -225,7 +225,7 @@ const Section3 = ({ scrollYProgress }) => {
   );
 };
 
-const Section4 = ({ scrollYProgress }) => {
+const Section4 = ({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) => {
   const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 0]);
 

@@ -19,7 +19,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="relative mx-auto bg-accent-black px-96 ">
+    <nav className="relative mx-auto bg-accent-black px-96 z-50">
       {/* Top bar */}
       <div className="flex items-center justify-between px-8 py-4">
         <div className="flex items-center gap-2">
@@ -48,7 +48,7 @@ const Navigation = () => {
             <FlipLink href="/" onClick={() => setIsOpen(false)}>
               Home
             </FlipLink>
-            <FlipLink href="/about-us" onClick={() => setIsOpen(false)}>
+            <FlipLink href="/about" onClick={() => setIsOpen(false)}>
               About
             </FlipLink>
             <FlipLink href="/services" onClick={() => setIsOpen(false)}>
@@ -63,29 +63,31 @@ const Navigation = () => {
             <FlipLink href="/contact-us" onClick={() => setIsOpen(false)}>
               Contact
             </FlipLink>
-
-            <div className="flex gap-4">
-              <Link
-                href="https://www.instagram.com/rosesby.lina/"
-                target="_blank"
-                onClick={() => setIsOpen(false)}
-              >
-                <Instagram size={24} color="#FEFEFE" />
-              </Link>
-              <Link
-                href="https://www.facebook.com/Rosesby.lina"
-                target="_blank"
-                onClick={() => setIsOpen(false)}
-              >
-                <Facebook size={24} color="#FEFEFE" />
-              </Link>
-              <Link
-                href="https://www.tiktok.com/@rosesby.lina"
-                target="_blank"
-                onClick={() => setIsOpen(false)}
-              >
-                <TikTok />
-              </Link>
+            <div>
+              <p className="text-xl my-4">Follow Us!</p>
+              <div className="flex gap-4">
+                <Link
+                  href="https://www.instagram.com/rosesby.lina/"
+                  target="_blank"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Instagram size={24} color="#FEFEFE" />
+                </Link>
+                <Link
+                  href="https://www.facebook.com/Rosesby.lina"
+                  target="_blank"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Facebook size={24} color="#FEFEFE" />
+                </Link>
+                <Link
+                  href="https://www.tiktok.com/@rosesby.lina"
+                  target="_blank"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <TikTok />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

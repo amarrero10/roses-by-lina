@@ -22,7 +22,7 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
         <motion.span
           animate={{ rotate: open ? 45 : 0 }}
           transition={{ duration: 0.45, ease: "easeOut" }}
-          className="text-3xl font-light"
+          className="text-4xl font-light cursor-pointer"
         >
           +
         </motion.span>
