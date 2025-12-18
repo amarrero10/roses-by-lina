@@ -19,7 +19,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="relative mx-auto bg-accent-black px-96 z-50">
+    <nav className="relative mx-auto bg-accent-black px-96 z-50 w-screen">
       {/* Top bar */}
       <div className="flex items-center justify-between px-8 py-4">
         <div className="flex items-center gap-2">
@@ -43,7 +43,7 @@ const Navigation = () => {
           isOpen ? "h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="flex flex-col items-left px-4 py-16 text-8xl font-medium">
+        <div className="flex flex-col items-left px-4 py-16 text-8xl font-medium w-full">
           <div className="flex flex-col gap-4 font-serif ">
             <FlipLink href="/" onClick={() => setIsOpen(false)}>
               Home
