@@ -48,6 +48,9 @@ const Navigation = () => {
             <FlipLink href="/" onClick={() => setIsOpen(false)}>
               Home
             </FlipLink>
+            <FlipLink href="/about-us" onClick={() => setIsOpen(false)}>
+              About
+            </FlipLink>
             <FlipLink href="/services" onClick={() => setIsOpen(false)}>
               Services
             </FlipLink>
@@ -60,9 +63,7 @@ const Navigation = () => {
             <FlipLink href="/contact-us" onClick={() => setIsOpen(false)}>
               Contact
             </FlipLink>
-            <FlipLink href="/about-us" onClick={() => setIsOpen(false)}>
-              About
-            </FlipLink>
+
             <div className="flex gap-4">
               <Link
                 href="https://www.instagram.com/rosesby.lina/"

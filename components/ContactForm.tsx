@@ -12,7 +12,11 @@ export type FormData = {
   phone: number;
 };
 
-const ContactForm: FC = () => {
+type ContactFormProps = {
+  className?: string;
+};
+
+const ContactForm: FC<ContactFormProps> = ({ className = "" }) => {
   const { register, handleSubmit, reset } = useForm<FormData>();
 
   function onSubmit(data: FormData) {
@@ -21,7 +25,7 @@ const ContactForm: FC = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className=" w-[500px] mx-auto ">
+    <form onSubmit={handleSubmit(onSubmit)} className={`w-[500px] mx-auto ${className}`}>
       <div className="mb-5">
         <label htmlFor="name" className="mb-3 block text-base font-medium text-primary-white">
           Name
