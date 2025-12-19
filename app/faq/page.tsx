@@ -46,7 +46,7 @@ function Faq() {
         <div className="absolute inset-0 bg-black/30" />
 
         {/* Content */}
-        <div className="relative z-10 max-w-3xl mx-auto bg-[#fefefe] p-20 rounded-lg">
+        <div className="relative z-10 sm:max-w-3xl mx-auto bg-[#fefefe] sm:p-20 p-10 rounded-lg">
           <h2 className="text-6xl font-light text-center mb-16">
             Frequently
             <br />
@@ -61,7 +61,7 @@ function Faq() {
         </div>
       </section>
       <section className=" py-20">
-        <h2 className="text-6xl font-light text-center mb-16">
+        <h2 className="sm:text-6xl px-3 sm:px-0 text-4xl font-light text-center mb-16">
           Not finding the answers you’re looking for? Get in touch!
         </h2>
         <div className="max-w-5xl mx-auto flex justify-center text-center">
