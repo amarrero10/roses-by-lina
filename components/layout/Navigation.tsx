@@ -19,7 +19,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="relative mx-auto bg-accent-black px-96 z-50 w-screen">
+    <nav className="relative mx-auto bg-accent-black 2xl:px-96 z-50 w-full">
       {/* Top bar */}
       <div className="flex items-center justify-between px-8 py-4">
         <div className="flex items-center gap-2">

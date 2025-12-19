@@ -25,7 +25,7 @@ const ContactForm: FC<ContactFormProps> = ({ className = "" }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={`w-[500px] mx-auto ${className}`}>
+    <form onSubmit={handleSubmit(onSubmit)} className={` ${className}`}>
       <div className="mb-5">
         <label htmlFor="name" className="mb-3 block text-base font-medium text-primary-white">
           Name
