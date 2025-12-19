@@ -19,13 +19,13 @@ const ServicesHero = () => {
         <div className="absolute inset-0 bg-black/40" />
 
         {/* Content */}
-        <div className="relative z-10 h-full flex items-center px-32">
-          <div className="max-w-xl text-white">
+        <div className="relative z-10 h-full flex items-center sm:px-32 px-6">
+          <div className="sm:max-w-xl text-white">
             <span className="block text-sm uppercase tracking-widest text-white/70 mb-4">
               Our Services
             </span>
 
-            <h1 className="text-7xl font-light leading-tight mb-6">
+            <h1 className="sm:text-7xl text-4xl font-light leading-tight mb-6">
               Floral Design for
               <br />
               Every Occasion

@@ -67,7 +67,7 @@ const About = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="relative aspect-[4/5]"
+            className="relative aspect-4/5"
           >
             <Image src="/1.jpg" alt="Our floral studio" fill className="object-cover" />
           </motion.div>
