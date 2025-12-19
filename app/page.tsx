@@ -137,7 +137,7 @@ export default function Home() {
               for our floral patterns.
             </p>
 
-            <ContactForm className=" w-1/2 mx-auto" />
+            <ContactForm className=" sm:w-1/2 sm:mx-auto " />
             <p className="text-lg leading-relaxed mt-10 text-center font-poppins">
               Rather call or text? Reach out to us at 813-956-2388 instead.
             </p>
