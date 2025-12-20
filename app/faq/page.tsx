@@ -19,11 +19,7 @@ function Faq() {
       answer:
         "For everyday arrangements, 24–48 hours is recommended. Weddings and large events typically require advance notice.",
     },
-    {
-      question: "Do you deliver?",
-      answer:
-        "Yes, delivery is available within our service area. Delivery fees may vary depending on location and timing.",
-    },
+
     {
       question: "Do you offer consultations?",
       answer:
@@ -33,6 +29,26 @@ function Faq() {
       question: "How much do your floral arrangements cost?",
       answer:
         "Because every arrangement is custom-designed, pricing varies based on size, flower selection, seasonality, and event details. We don’t offer set prices, but we’re happy to work within your budget. For a personalized quote, please contact us by phone or email and we’ll be glad to help.",
+    },
+    {
+      question: "How far in advance should I place my order?",
+      answer:
+        "For standard floral arrangements, we recommend placing your order at least 48–72 hours in advance. For larger or more involved designs, we ask for a minimum of one month’s notice to ensure availability and proper planning.",
+    },
+    {
+      question: "Do you offer delivery, and is there a fee?",
+      answer:
+        "Yes, delivery is available and fees vary depending on the delivery location. Pickup is always free and can be arranged at a scheduled time.",
+    },
+    {
+      question: "Do you accept last-minute orders?",
+      answer:
+        "Last-minute orders may be accepted based on availability. If we are able to accommodate a rush request, a $20 rush fee will apply.",
+    },
+    {
+      question: "Do you ship flowers?",
+      answer:
+        "At this time, we do not ship flowers. All orders are available for local delivery or pickup only.",
     },
   ];
 

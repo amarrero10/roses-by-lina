@@ -1,5 +1,6 @@
 import ContactForm from "@/components/ContactForm";
 import { Mail, Phone } from "lucide-react";
+import Link from "next/link";
 
 const Contact = () => {
   return (
@@ -34,6 +35,15 @@ const Contact = () => {
               to assist in English or Spanish — <span className="italic">hablamos español</span>.
             </p>
 
+            <p className="text-sm text-accent-black leading-relaxed mt-4">
+              A 50% non-refundable deposit is required to place and secure all orders. Please review
+              our{" "}
+              <Link href="/policy" className="underline font-medium hover:text-black">
+                policies
+              </Link>{" "}
+              for full details before submitting your request.
+            </p>
+
             <div className="mt-6 space-y-3 text-sm">
               <div className="flex items-center">
                 <Phone className="mr-2 text-accent-black" />
@@ -53,7 +63,6 @@ const Contact = () => {
               </div>
             </div>
           </div>
-
           {/* Form */}
           <ContactForm className="bg-black p-6 md:p-12" />
         </div>
