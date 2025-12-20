@@ -12,6 +12,7 @@
     "@deemlol/next-icons": "^0.1.9",
     "@gsap/react": "^2.1.2",
     "@types/nodemailer": "^7.0.4",
+    "@vercel/analytics": "^1.6.1",
     "framer-motion": "^12.23.26",
     "gsap": "^3.14.2",
     "i18next": "^25.7.2",
