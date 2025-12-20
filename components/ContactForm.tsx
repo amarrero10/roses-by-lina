@@ -92,7 +92,7 @@ const ContactForm: FC<ContactFormProps> = ({ className = "" }) => {
             <input
               type="date"
               min={today}
-              className="w-full resize-none rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
+              className="w-[80%] resize-none rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
               {...register("date", {
                 required: "Date is required",
                 validate: (value) => {

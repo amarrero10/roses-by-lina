@@ -12,6 +12,7 @@ import ServicesHero from "@/components/ServicesHero";
 import ContactForm from "@/components/ContactForm";
 import { Mail, Phone } from "lucide-react";
 import { Suspense } from "react";
+import Link from "next/link";
 
 export default function Services() {
   const container = useRef(null);
@@ -38,7 +39,7 @@ export default function Services() {
       </Suspense>
 
       <div className="sm:py-60 py-10 bg-accent-black">
-        <main ref={container} className="relative h-[400vh] ">
+        <main ref={container} className="relative h-[450vh] ">
           <Section1 scrollYProgress={scrollYProgress} />
           <Section2 scrollYProgress={scrollYProgress} />
           <Section3 scrollYProgress={scrollYProgress} />
@@ -74,6 +75,15 @@ export default function Services() {
             <p className="text-sm text-accent-black leading-relaxed">
               Prefer to reach out directly? You’re welcome to call or email us instead. We’re happy
               to assist in English or Spanish — <span className="italic">hablamos español</span>.
+            </p>
+
+            <p className="text-sm text-accent-black leading-relaxed mt-4">
+              A 50% non-refundable deposit is required to place and secure all orders. Please review
+              our{" "}
+              <Link href="/policy" className="underline font-medium hover:text-black">
+                policies
+              </Link>{" "}
+              for full details before submitting your request.
             </p>
 
             <div className="mt-6 space-y-3 text-sm">
