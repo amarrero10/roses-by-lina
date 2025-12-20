@@ -2,8 +2,9 @@
 import Image from "next/image";
 import Pic1 from "../../public/1.jpg";
 import Pic2 from "../../public/2.jpg";
-import Pic3 from "../../public/3.jpg";
-import Pic4 from "../../public/4.jpg";
+import Pic3 from "../../public/33.jpg";
+import Pic4 from "../../public/19.jpg";
+import Pic5 from "../../public/32.jpg";
 import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
 import { useEffect, useRef } from "react";
 import Lenis from "lenis";
@@ -42,6 +43,7 @@ export default function Services() {
           <Section2 scrollYProgress={scrollYProgress} />
           <Section3 scrollYProgress={scrollYProgress} />
           <Section4 scrollYProgress={scrollYProgress} />
+          <Section5 scrollYProgress={scrollYProgress} />
         </main>
       </div>
       <section className="bg-accent-black py-16 md:py-20">
@@ -298,6 +300,7 @@ const Section4 = ({ scrollYProgress }: { scrollYProgress: MotionValue<number> })
         h-[700px] md:h-[800px]
         grid grid-cols-1 md:grid-cols-2
         rounded-2xl
+        mb-10
       "
     >
       {/* Image */}
@@ -341,6 +344,64 @@ const Section4 = ({ scrollYProgress }: { scrollYProgress: MotionValue<number> })
           <p className="text-base md:text-lg leading-relaxed text-gray-600">
             Carefully curated floral designs created with intention, beauty, and respect — honoring
             love, life, and memory.
+          </p>
+        </div>
+      </div>
+    </motion.section>
+  );
+};
+
+const Section5 = ({ scrollYProgress }: { scrollYProgress: MotionValue<number> }) => {
+  const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
+  const rotate = useTransform(scrollYProgress, [0, 1], [0, 0]);
+
+  return (
+    <motion.section
+      style={{ scale, rotate }}
+      className="
+        sticky top-0
+        h-[700px] md:h-[800px]
+        grid grid-cols-1 md:grid-cols-2
+        rounded-2xl
+      "
+    >
+      {/* Image */}
+      <div className="relative h-[300px] md:h-auto">
+        <Image
+          src={Pic5}
+          alt="Wedding and Memorial Flowers"
+          placeholder="blur"
+          fill
+          className="
+            object-contain
+            bg-primary-white
+          "
+        />
+      </div>
+
+      {/* Text */}
+      {/* Text */}
+      <div
+        className="
+          flex items-center
+          px-8 md:px-24
+          bg-[#faf8f6]
+          min-h-[400px]
+        "
+      >
+        <div className="max-w-md">
+          <span className="block text-sm uppercase tracking-widest text-gray-400 mb-4">
+            Signature Designs
+          </span>
+
+          <div className="w-12 h-px bg-gray-600 mb-6" />
+
+          <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-600">Boxed Arrangements</h2>
+
+          <p className="text-base md:text-lg leading-relaxed text-gray-600">
+            Elegant boxed floral arrangements designed for effortless gifting. Thoughtfully styled
+            and beautifully presented, each box is perfect for surprises, celebrations, or simply
+            making someone’s day feel extra special.
           </p>
         </div>
       </div>

@@ -5,7 +5,7 @@ const ServicesHero = () => {
         {/* Background video */}
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src="/lina-reels.mp4"
+          src="/services-video-two.mp4"
           autoPlay
           muted
           loop

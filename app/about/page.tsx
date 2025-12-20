@@ -25,7 +25,7 @@ const About = () => {
   return (
     <>
       {/* ================= HERO ================= */}
-      <section className="relative min-h-screen bg-[#fefefe] flex items-center px-6">
+      <section className="relative min-h-[800px] bg-[#fefefe] flex items-center px-6">
         <motion.div
           initial="hidden"
           animate="show"
@@ -34,7 +34,7 @@ const About = () => {
         >
           <motion.span
             variants={fadeUp}
-            className="block text-sm uppercase tracking-widest text-black/50 mb-4"
+            className="block text-sm uppercase tracking-widest text-black/50 mb-4 sm:text-3xl"
           >
             About Us
           </motion.span>
@@ -50,7 +50,7 @@ const About = () => {
 
           <motion.p
             variants={fadeUp}
-            className="text-base md:text-lg text-black/60 max-w-2xl mx-auto"
+            className="text-base md:text-xl text-black/60 max-w-2xl mx-auto"
           >
             Every arrangement we create is thoughtfully designed to celebrate life’s most meaningful
             moments.
@@ -66,10 +66,15 @@ const About = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="relative aspect-4/5"
           >
-            <Image src="/1.jpg" alt="Our floral studio" fill className="object-cover" />
+            <Image
+              src="/lina-about.jpg"
+              alt="Roses by Lina floral studio"
+              fill
+              className="object-cover"
+            />
           </motion.div>
 
           {/* Text */}
@@ -79,13 +84,13 @@ const About = () => {
             viewport={{ once: true }}
             variants={stagger}
           >
-            <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-light mb-4 md:mb-6">
+            <motion.h2 variants={fadeUp} className="text-4xl md:text-6xl font-light mb-4 md:mb-6">
               Our Story
             </motion.h2>
 
             <motion.p
               variants={fadeUp}
-              className="text-base md:text-lg text-black/60 leading-relaxed mb-4 md:mb-6"
+              className="text-base md:text-xl text-black/60 leading-relaxed mb-4 md:mb-6"
             >
               Roses by Lina was founded with a simple belief — flowers have the power to express
               what words sometimes cannot.
@@ -93,10 +98,30 @@ const About = () => {
 
             <motion.p
               variants={fadeUp}
-              className="text-base md:text-lg text-black/60 leading-relaxed"
+              className="text-base md:text-xl text-black/60 leading-relaxed mb-4 md:mb-6"
             >
-              From everyday arrangements to once-in-a-lifetime celebrations, we approach every
-              design with intention, creativity, and care.
+              From everyday arrangements to once-in-a-lifetime celebrations, every design is created
+              with intention, creativity, and care.
+            </motion.p>
+
+            {/* Owner */}
+            <motion.p
+              variants={fadeUp}
+              className="text-base md:text-xl text-black/60 leading-relaxed"
+            >
+              Founded by <span className="font-medium text-black/70">Linette Carcamo</span>, a young
+              entrepreneur with a deep passion for floral design, Roses by Lina is rooted in
+              artistry, dedication, and a love for meaningful moments. Linette brings a personal,
+              hands-on approach to every arrangement, ensuring each piece feels thoughtful and
+              uniquely crafted.
+            </motion.p>
+
+            {/* Optional language note */}
+            <motion.p
+              variants={fadeUp}
+              className="text-sm sm:text-md text-black/50 leading-relaxed mt-4"
+            >
+              Services available in English and Spanish.
             </motion.p>
           </motion.div>
         </div>
@@ -109,9 +134,9 @@ const About = () => {
           whileInView="show"
           viewport={{ once: true }}
           variants={stagger}
-          className="max-w-5xl mx-auto text-center px-6 md:px-12"
+          className="max-w-7xl mx-auto text-center px-6 md:px-12"
         >
-          <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-light mb-12 md:mb-20">
+          <motion.h2 variants={fadeUp} className="text-4xl md:text-7xl font-light mb-12 md:mb-20">
             What Guides Our Work
           </motion.h2>
 
@@ -131,8 +156,8 @@ const About = () => {
               },
             ].map((item) => (
               <motion.div key={item.title} variants={fadeUp}>
-                <h3 className="text-lg md:text-xl font-light mb-3 md:mb-4">{item.title}</h3>
-                <p className="text-black/60 text-sm md:text-base">{item.text}</p>
+                <h3 className="text-lg md:text-2xl font-light mb-3 md:mb-4">{item.title}</h3>
+                <p className="text-black/60 text-sm md:text-lg">{item.text}</p>
               </motion.div>
             ))}
           </div>

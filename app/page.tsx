@@ -5,9 +5,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import img1 from "@/public/1.jpg";
+import img16 from "@/public/16.jpg";
 import img2 from "@/public/2.jpg";
-import img3 from "@/public/3.jpg";
+import img26 from "@/public/26.jpg";
 import Lenis from "lenis";
 import InfiniteText from "@/components/InfiniteText";
 import ContactForm from "@/components/ContactForm";
@@ -43,7 +43,7 @@ export default function Home() {
               Founded by Linette Carcamo
             </p>
             <p className=" md:text-xl text-sm text-center sm:text-left">
-              Based in the Tampa Bay Area
+              Based in the Tampa Bay Area, proudly serving our local communities.
             </p>
           </div>
         </section>
@@ -87,7 +87,7 @@ export default function Home() {
             <div className=" max-w-[screen] shadow-2xl rounded-2xl">
               <Image
                 className=" rounded-2xl sm:max-h-[600px] object-cover"
-                src={img1}
+                src={img16}
                 alt="home"
                 placeholder="blur"
               ></Image>
@@ -110,7 +110,7 @@ export default function Home() {
             <div className=" max-w-[screen] shadow-2xl rounded-2xl">
               <Image
                 className=" rounded-2xl sm:max-h-[600px]  object-cover"
-                src={img3}
+                src={img26}
                 alt="home"
                 placeholder="blur"
               ></Image>

@@ -30,6 +30,14 @@ const images: string[] = [
   "/22.jpg",
   "/23.jpg",
   "/24.jpg",
+  "/25.jpg",
+  "/26.jpg",
+  "/27.jpg",
+  "/28.jpg",
+  "/29.jpg",
+  "/30.jpg",
+  "/31.jpg",
+  "/32.jpg",
 ];
 
 const Gallery = () => {

@@ -7,8 +7,8 @@ import img1 from "@/public/1.jpg";
 import img2 from "@/public/2.jpg";
 import img3 from "@/public/3.jpg";
 import img4 from "@/public/4.jpg";
-import img5 from "@/public/5.jpg";
-import img6 from "@/public/6.jpg";
+import img19 from "@/public/19.jpg";
+import img9 from "@/public/9.jpg";
 import img7 from "@/public/7.jpg";
 
 export default function HomeGallery() {
@@ -42,11 +42,11 @@ export default function HomeGallery() {
       scale: scale5,
     },
     {
-      src: img5,
+      src: img19,
       scale: scale6,
     },
     {
-      src: img6,
+      src: img9,
       scale: scale8,
     },
     {
