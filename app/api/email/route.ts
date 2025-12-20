@@ -87,7 +87,7 @@ export async function POST(request: NextRequest) {
 
         <p>
           <a
-            href="https://www.rosesbylina.com/policies"
+            href="https://www.rosesbylina.boutique/policy"
             style="
               display: inline-block;
               background-color: #6b4eff;
