@@ -58,9 +58,67 @@ export async function POST(request: NextRequest) {
       date,
   };
 
-  const sendMailPromise = () =>
+  const mailToClient: Mail.Options = {
+    from: process.env.MY_EMAIL,
+    to: email,
+    bcc: "rosesbylina2025@gmail.com",
+    subject: "Thank You for Contacting Roses by Lina 🌹",
+    html: `
+    <html>
+      <body style="font-family: Arial, sans-serif; color: #4a4a4a; line-height: 1.6;">
+        <p>
+          Thank you for reaching out to <strong>Roses by Lina</strong>! We’re excited to learn more
+          about your floral needs and help bring your vision to life.
+        </p>
+
+        <p>
+          To help us better assist you, please have an <strong>inspiration photo</strong> or any
+          reference images ready, along with any details you may have in mind.
+        </p>
+
+        <p>
+          Please note that a <strong>50% non-refundable deposit</strong> is required to place and
+          secure your order. Orders will not be scheduled without this deposit.
+        </p>
+
+        <p>
+          We kindly ask that you review our full policies before moving forward:
+        </p>
+
+        <p>
+          <a
+            href="https://www.rosesbylina.com/policies"
+            style="
+              display: inline-block;
+              background-color: #6b4eff;
+              color: #ffffff;
+              padding: 10px 20px;
+              text-decoration: none;
+              border-radius: 6px;
+              margin-top: 10px;
+            "
+          >
+            View Our Policies
+          </a>
+        </p>
+
+        <p style="margin-top: 30px;">
+          We’ll be in touch shortly. If you have any questions in the meantime, feel free to reply
+          directly to this email.
+        </p>
+
+        <p style="margin-top: 20px;">
+          Warm regards,<br />
+          <strong>Linette Carcamo</strong>
+        </p>
+      </body>
+    </html>
+  `,
+  };
+
+  const sendMailPromise = (options: Mail.Options) =>
     new Promise<string>((resolve, reject) => {
-      transport.sendMail(mailOptions, function (err) {
+      transport.sendMail(options, (err) => {
         if (!err) {
           resolve("Email sent");
         } else {
@@ -70,8 +128,13 @@ export async function POST(request: NextRequest) {
     });
 
   try {
-    await sendMailPromise();
-    return NextResponse.json({ message: "Email sent" });
+    // Send email to client
+    await sendMailPromise(mailToClient);
+
+    // Send email to business
+    await sendMailPromise(mailOptions);
+
+    return NextResponse.json({ message: "Emails sent successfully" });
   } catch (err) {
     return NextResponse.json({ error: err }, { status: 500 });
   }
