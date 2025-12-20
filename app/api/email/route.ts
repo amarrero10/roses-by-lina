@@ -103,9 +103,15 @@ export async function POST(request: NextRequest) {
         </p>
 
         <p style="margin-top: 30px;">
-          We’ll be in touch shortly. If you have any questions in the meantime, feel free to reply
-          directly to this email.
+          We’ll be in touch shortly. If you have any questions before then, you’re welcome to call or text us.
         </p>
+
+        <p>
+          <a href="tel:+18139562388" style="color: #6b4eff; text-decoration: underline;">
+            813-956-2388
+          </a>
+        </p>
+
 
         <p style="margin-top: 20px;">
           Warm regards,<br />
