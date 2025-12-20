@@ -128,7 +128,9 @@ export default function Home() {
 
         <section className=" px-3 my-20  selection:bg-primary-white selection:text-red-200">
           <div className=" bg-accent-black text-primary-white rounded-2xl py-20 px-10  ">
-            <h2 className="text-8xl font-serif font-light mb-10 text-center ">Get In Touch</h2>
+            <h2 className="text-8xl font-serif font-light mb-10 text-center text-[#c7a552] ">
+              Get In Touch
+            </h2>
             <p className="sm:text-lg text-sm leading-relaxed sm:text-justify font-poppins mb-20 sm:w-[700px] mx-auto">
               We design flower arrangements and displays for various occasions, spaces, and themes,
               including; commercials, advertisements, packaging, retail stores, complexes,
@@ -137,7 +139,7 @@ export default function Home() {
               for our floral patterns.
             </p>
 
-            <ContactForm className=" sm:w-1/2 sm:mx-auto " />
+            <ContactForm className=" sm:w-1/2 sm:mx-auto  " />
             <p className="text-lg leading-relaxed mt-10 text-center font-poppins">
               Rather call or text? Reach out to us at 813-956-2388 instead.
             </p>

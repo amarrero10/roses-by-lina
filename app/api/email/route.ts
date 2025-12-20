@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
 
 export async function POST(request: NextRequest) {
-  const { email, name, phone, message } = await request.json();
+  const { email, name, phone, message, date } = await request.json();
 
   const phoneNumber = [];
 
@@ -12,9 +12,9 @@ export async function POST(request: NextRequest) {
   }
 
   const areaCode = phoneNumber.slice(0, 3);
-  console.log("phone number after area code", phoneNumber);
+
   const firstThree = phoneNumber.slice(3, 6);
-  console.log("firstThree", firstThree);
+
   const lastFour = phoneNumber.slice(6, 10);
 
   const formattedPhoneNumber = `${areaCode.join("")}-${firstThree.join("")}-${lastFour.join("")}`;
@@ -44,7 +44,18 @@ export async function POST(request: NextRequest) {
     cc: process.env.MY_EMAIL,
     // cc: email, (uncomment this line if you want to send a copy to the sender)
     subject: `Message from ${name} `,
-    text: message + "\n\n" + "Email: " + email + "\n\n" + "Phone: " + formattedPhoneNumber,
+    text:
+      "Request: " +
+      message +
+      "\n\n" +
+      "Email: " +
+      email +
+      "\n\n" +
+      "Phone: " +
+      formattedPhoneNumber +
+      "\n\n" +
+      "Date Requested: " +
+      date,
   };
 
   const sendMailPromise = () =>

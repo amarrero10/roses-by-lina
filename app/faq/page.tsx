@@ -78,7 +78,7 @@ function Faq() {
             <p className="text-sm text-black/60 mb-4">Click below to send us a message.</p>
 
             <Link
-              href="mailto:rosesbylina@gmail.com"
+              href="mailto:rosesbylina2025@gmail.com"
               className="inline-block border border-black px-8 py-3 text-sm uppercase tracking-wide hover:bg-black hover:text-white transition"
             >
               Contact Us

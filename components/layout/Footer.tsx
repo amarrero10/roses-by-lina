@@ -40,7 +40,7 @@ const Footer = () => {
             <p>By Email</p>
           </div>
           <p className="mt-4 md:mt-7 md:ml-16 underline underline-offset-3">
-            <a href="mailto:rosesbylina@gmail.com">rosesbylina@gmail.com</a>
+            <a href="mailto:rosesbylina2025@gmail.com">rosesbylina2025@gmail.com</a>
           </p>
         </div>
       </div>
@@ -61,7 +61,15 @@ const Footer = () => {
 
         {/* Copyright */}
         <div>
-          <p className="text-sm md:text-lg">&copy; Roses by Lina | All rights reserved {year}</p>
+          <p className="text-sm md:text-lg">
+            &copy; Roses by Lina | All rights reserved | {year} |
+            <span className="">
+              {" "}
+              <Link href="/policy" className=" underline">
+                Policy & Terms
+              </Link>
+            </span>{" "}
+          </p>
         </div>
 
         {/* Socials */}

@@ -85,10 +85,10 @@ export default function Services() {
               <div className="flex items-center">
                 <Mail className="mr-2 text-accent-black" />
                 <a
-                  href="mailto:rosesbylina@gmail.com"
+                  href="mailto:rosesbylina2025@gmail.com"
                   className="hover:text-white underline transition"
                 >
-                  rosesbylina@gmail.com
+                  rosesbylina2025@gmail.com
                 </a>
               </div>
             </div>

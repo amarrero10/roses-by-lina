@@ -63,6 +63,9 @@ const Navigation = () => {
             <FlipLink href="/contact-us" onClick={() => setIsOpen(false)}>
               Contact
             </FlipLink>
+            <FlipLink href="/policy" onClick={() => setIsOpen(false)}>
+              Policy
+            </FlipLink>
             <div>
               <p className="text-xl my-4">Follow Us!</p>
               <div className="flex gap-4">
