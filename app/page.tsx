@@ -73,7 +73,7 @@ export default function Home() {
 
             <div
               className={`border-t-8 border-accent-text-purple rounded-xl transition-all duration-300 ease-in-out ${
-                hovered ? "w-[105%]" : "w-0"
+                hovered ? "2xl:w-[105%] sm:w-[63%]" : "w-0"
               }`}
             ></div>
           </motion.div>
@@ -83,7 +83,7 @@ export default function Home() {
 
         <section className="  text-left px-3 w-full ">
           <p className="text-lg leading-relaxed sm:mb-14 mb-3">Recent Works</p>
-          <div className="flex gap-10 flex-col sm:flex-row ">
+          <div className="grid gap-10 grid-cols-1 sm:grid-cols-3 ">
             <div className=" max-w-[screen] shadow-2xl rounded-2xl">
               <Image
                 className=" rounded-2xl sm:max-h-[600px] object-cover"

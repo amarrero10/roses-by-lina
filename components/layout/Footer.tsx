@@ -4,14 +4,14 @@ import TikTok from "../ui/TikTok";
 import { Instagram, Facebook } from "@deemlol/next-icons";
 import Link from "next/link";
 import { Phone, Mail } from "lucide-react";
-import logo from "@/public/logo.jpg";
+import logo from "@/public/logo-white.jpeg";
 import Image from "next/image";
 
 const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="flex flex-col bg-accent-black text-primary-white py-16 md:py-20">
+    <footer className="flex flex-col bg-main-text-gold text-accent-black py-16 md:py-20">
       {/* Top section */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-10 mx-6 md:mx-24 text-center md:text-left">
         {/* Intro */}

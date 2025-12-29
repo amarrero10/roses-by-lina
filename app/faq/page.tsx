@@ -56,10 +56,10 @@ function Faq() {
     <>
       <section className="relative py-32 overflow-hidden">
         {/* Background image */}
-        <Image src={img} alt="" fill className="object-cover" priority />
+        {/* <Image src={img} alt="" fill className="object-cover" priority /> */}
 
         {/* Overlay (important for readability) */}
-        <div className="absolute inset-0 bg-black/30" />
+        {/* <div className="absolute inset-0 bg-black/30" /> */}
 
         {/* Content */}
         <div className="relative z-10 sm:max-w-3xl mx-auto bg-[#fefefe] sm:p-20 p-10 rounded-lg">

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import lina from "../../public/lina-about.jpg";
 
 /* ----------------- Motion Variants ----------------- */
 
@@ -70,7 +71,8 @@ const About = () => {
             className="relative aspect-4/5"
           >
             <Image
-              src="/lina-about.jpg"
+              src={lina}
+              placeholder="blur"
               alt="Roses by Lina floral studio"
               fill
               className="object-cover"

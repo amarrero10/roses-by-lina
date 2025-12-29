@@ -33,17 +33,21 @@ const Navigation = () => {
           onClick={() => setIsOpen(!isOpen)}
           className="text-primary-white hover:opacity-80 transition cursor-pointer "
         >
-          {isOpen ? <X size={32} /> : <Menu size={32} />}
+          {isOpen ? (
+            <X size={32} className="text-main-text-gold" />
+          ) : (
+            <Menu size={32} className="text-main-text-gold" />
+          )}
         </button>
       </div>
 
       {/* Dropdown menu */}
       <div
-        className={`absolute top-full left-0 w-full bg-accent-black text-primary-white transition-all duration-500 ease-in-out overflow-hidden ${
+        className={`absolute top-full left-0 w-full bg-accent-black text-main-text-gold transition-all duration-500 ease-in-out overflow-hidden ${
           isOpen ? "h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="flex flex-col items-left px-4 py-16 sm:text-8xl text-5xl font-medium w-full">
+        <div className="flex flex-col items-left px-4 sm:py-16 py-3 2xl:text-8xl sm:text-5xl text-2xl font-medium w-full">
           <div className="flex flex-col gap-4 font-serif ">
             <FlipLink href="/" onClick={() => setIsOpen(false)}>
               Home
@@ -74,14 +78,14 @@ const Navigation = () => {
                   target="_blank"
                   onClick={() => setIsOpen(false)}
                 >
-                  <Instagram size={24} color="#FEFEFE" />
+                  <Instagram size={24} color="#c7a552" />
                 </Link>
                 <Link
                   href="https://www.facebook.com/Rosesby.lina"
                   target="_blank"
                   onClick={() => setIsOpen(false)}
                 >
-                  <Facebook size={24} color="#FEFEFE" />
+                  <Facebook size={24} color="#c7a552" />
                 </Link>
                 <Link
                   href="https://www.tiktok.com/@rosesby.lina"
