@@ -1,7 +1,6 @@
 import FAQItem from "@/components/FAQItem";
-import Image from "next/image";
 import Link from "next/link";
-import img from "../../public/25.jpg";
+
 function Faq() {
   const faqs = [
     {

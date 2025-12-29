@@ -39,7 +39,7 @@ export default function Services() {
       </Suspense>
 
       <div className="sm:py-60 py-10 bg-accent-black">
-        <main ref={container} className="relative sm:h-[520vh] h-[400vh] ">
+        <main ref={container} className="relative sm:h-[520vh] h-[450vh] ">
           <Section1 scrollYProgress={scrollYProgress} />
           <Section2 scrollYProgress={scrollYProgress} />
           <Section3 scrollYProgress={scrollYProgress} />
