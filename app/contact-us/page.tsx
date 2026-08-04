@@ -12,8 +12,8 @@ const infoItems = [
   {
     icon: Mail,
     label: "Email",
-    value: "albert.marrero10@gmail.com",
-    href: "mailto:albert.marrero10@gmail.com",
+    value: "rosesbylina2025@gmail.com",
+    href: "mailto:rosesbylina2025@gmail.com",
   },
   {
     icon: MapPin,
@@ -55,9 +55,7 @@ const Contact = () => {
                 <li key={item.label} className="flex items-start gap-4">
                   <item.icon size={20} className="mt-1 text-main-text-gold" />
                   <div>
-                    <p className="text-xs uppercase tracking-widest text-muted-ink">
-                      {item.label}
-                    </p>
+                    <p className="text-xs uppercase tracking-widest text-muted-ink">{item.label}</p>
                     {item.href ? (
                       <a href={item.href} className="text-lg text-accent-black hover:underline">
                         {item.value}

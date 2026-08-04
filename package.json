@@ -13,12 +13,12 @@
     "db:seed": "dotenv -e .env.local -- tsx scripts/seed.ts"
   },
   "dependencies": {
-    "@clerk/nextjs": "^7.6.5",
     "@deemlol/next-icons": "^0.1.9",
     "@gsap/react": "^2.1.2",
     "@neondatabase/serverless": "^1.1.0",
     "@vercel/analytics": "^1.6.1",
     "@vercel/blob": "^2.6.1",
+    "better-auth": "^1.6.26",
     "drizzle-orm": "^0.45.2",
     "framer-motion": "^12.23.26",
     "gsap": "^3.14.2",

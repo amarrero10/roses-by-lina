@@ -4,7 +4,6 @@ import Navigation from "@/components/layout/Navigation";
 import { Poppins, Playfair_Display, Montserrat } from "next/font/google";
 import Footer from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/next";
-import { ClerkProvider } from "@clerk/nextjs";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -40,11 +39,9 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${montserrat.variable} ${poppins.variable} antialiased h-screen`}
       >
-        <ClerkProvider>
-          <Navigation />
-          {children}
-          <Footer />
-        </ClerkProvider>
+        <Navigation />
+        {children}
+        <Footer />
         <Analytics />
       </body>
     </html>

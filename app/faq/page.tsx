@@ -67,7 +67,7 @@ function Faq() {
             have a question?
           </p>
           <Link
-            href="mailto:albert.marrero10@gmail.com"
+            href="mailto:rosesbylina2025@gmail.com"
             className="inline-flex items-center gap-2 border border-accent-black px-6 py-3 text-sm uppercase tracking-wide hover:bg-accent-black hover:text-primary-white transition"
           >
             <Mail size={16} />

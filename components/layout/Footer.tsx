@@ -34,10 +34,18 @@ const Footer = () => {
             Boutique floral design for the Tampa Bay area. Hablamos español.
           </p>
           <div className="mt-6 flex gap-5">
-            <Link href="https://www.instagram.com/rosesby.lina/" target="_blank" aria-label="Instagram">
+            <Link
+              href="https://www.instagram.com/rosesby.lina/"
+              target="_blank"
+              aria-label="Instagram"
+            >
               <Instagram size={20} />
             </Link>
-            <Link href="https://www.facebook.com/Rosesby.lina" target="_blank" aria-label="Facebook">
+            <Link
+              href="https://www.facebook.com/Rosesby.lina"
+              target="_blank"
+              aria-label="Facebook"
+            >
               <Facebook size={20} />
             </Link>
             <Link href="https://www.tiktok.com/@rosesby.lina" target="_blank" aria-label="TikTok">
@@ -86,8 +94,8 @@ const Footer = () => {
             </li>
             <li className="flex items-center gap-2">
               <Mail size={15} />
-              <a href="mailto:albert.marrero10@gmail.com" className="hover:underline">
-                albert.marrero10@gmail.com
+              <a href="mailto:rosesbylina2025@gmail.com" className="hover:underline">
+                rosesbylina2025@gmail.com
               </a>
             </li>
           </ul>

@@ -1,11 +1,12 @@
 import { redirect } from "next/navigation";
-import { auth } from "@clerk/nextjs/server";
-import { UserButton } from "@clerk/nextjs";
+import { headers } from "next/headers";
 import Link from "next/link";
+import { auth } from "@/lib/auth";
+import SignOutButton from "@/components/admin/SignOutButton";
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
-  const { userId } = await auth();
-  if (!userId) redirect("/sign-in");
+  const session = await auth.api.getSession({ headers: await headers() });
+  if (!session) redirect("/sign-in");
 
   return (
     <div className="min-h-screen bg-warm-surface">
@@ -25,7 +26,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
           <Link href="/" className="text-sm text-muted-ink hover:text-accent-black">
             View Site
           </Link>
-          <UserButton />
+          <span className="text-sm text-muted-ink">{session.user.email}</span>
+          <SignOutButton />
         </div>
       </header>
       <main className="px-6 py-10 md:px-10">{children}</main>

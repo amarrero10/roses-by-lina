@@ -1,15 +1,16 @@
 "use server";
 
-import { auth } from "@clerk/nextjs/server";
+import { headers } from "next/headers";
 import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { getDb } from "@/db";
+import { auth } from "@/lib/auth";
 import { orders, products, type ProductImage } from "@/db/schema";
 import type { ProductCategory } from "@/lib/products";
 
 async function requireAdmin() {
-  const { userId } = await auth();
-  if (!userId) throw new Error("Unauthorized");
+  const session = await auth.api.getSession({ headers: await headers() });
+  if (!session) throw new Error("Unauthorized");
 }
 
 function slugify(name: string) {

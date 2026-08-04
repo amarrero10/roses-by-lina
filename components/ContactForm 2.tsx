@@ -78,7 +78,7 @@ const ContactForm: FC<ContactFormProps> = ({ className = "" }) => {
             </label>
             <input
               type="email"
-              placeholder="albert.marrero10@gmail.com"
+              placeholder="rosesbylina2025@gmail.com"
               className="w-full rounded-md border border-gray-300 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-purple-500 focus:shadow-md"
               {...register("email", { required: true })}
             />

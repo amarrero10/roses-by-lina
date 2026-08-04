@@ -10,7 +10,7 @@ import RadioCard from "@/components/ui/RadioCard";
 import Button from "@/components/ui/Button";
 
 const paymentOptions: { value: PaymentMethod; label: string; description: string }[] = [
-  { value: "zelle", label: "Zelle", description: "Send to albert.marrero10@gmail.com" },
+  { value: "zelle", label: "Zelle", description: "Send to rosesbylina2025@gmail.com" },
   { value: "apple_pay", label: "Apple Pay", description: "Shared with you at confirmation" },
   { value: "cash_app", label: "Cash App", description: "Shared with you at confirmation" },
   { value: "cash", label: "Cash", description: "Paid at pickup or delivery" },

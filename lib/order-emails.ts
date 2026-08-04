@@ -6,7 +6,7 @@ type Order = typeof orders.$inferSelect;
 type OrderItem = typeof orderItems.$inferSelect;
 
 const paymentInstructions: Record<Order["paymentMethod"], string> = {
-  zelle: "Please send your total via Zelle to albert.marrero10@gmail.com.",
+  zelle: "Please send your total via Zelle to rosesbylina2025@gmail.com.",
   apple_pay: "We'll text or email you an Apple Pay request shortly.",
   cash_app: "We'll text or email you a Cash App request shortly.",
   cash: "Please have cash ready at pickup or delivery.",
