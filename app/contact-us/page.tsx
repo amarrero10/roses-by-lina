@@ -1,70 +1,98 @@
 import ContactForm from "@/components/ContactForm";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import Link from "next/link";
+
+const infoItems = [
+  {
+    icon: Phone,
+    label: "Phone",
+    value: "813-956-2388",
+    href: "tel:18139562388",
+  },
+  {
+    icon: Mail,
+    label: "Email",
+    value: "albert.marrero10@gmail.com",
+    href: "mailto:albert.marrero10@gmail.com",
+  },
+  {
+    icon: MapPin,
+    label: "Service Area",
+    value: "Tampa Bay, Florida",
+  },
+  {
+    icon: Clock,
+    label: "Response Time",
+    value: "Within 24–48 hours",
+  },
+];
 
 const Contact = () => {
   return (
     <>
-      <section className="bg-accent-black py-16 md:py-20">
-        <div
-          className="
-      max-w-4xl sm:max-w-7xl mx-auto
-      grid grid-cols-1 md:grid-cols-2
-      gap-12 md:gap-24
-      items-start
-      bg-accent-text-purple
-    "
-        >
-          {/* Text */}
-          <div className="text-accent-black p-6 md:p-10">
-            <h2 className="text-3xl md:text-5xl font-light mb-4 md:mb-6">
-              Let’s Create Something Beautiful
-            </h2>
+      <section className="bg-primary-white px-6 py-20 md:px-12 md:py-28">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="mb-4 block font-serif text-sm uppercase tracking-widest text-muted-ink">
+            Get In Touch
+          </span>
+          <h1 className="mb-6 font-serif text-4xl font-light text-accent-black md:text-6xl">
+            Let&apos;s Create Something Beautiful
+          </h1>
+          <p className="mx-auto max-w-xl text-base leading-relaxed text-muted-ink md:text-lg">
+            Whether you&apos;re celebrating a milestone, planning an event, or simply sending a
+            thoughtful gesture, we&apos;d love to hear from you. We&apos;re happy to assist in
+            English or Spanish — <span className="italic">hablamos español</span>.
+          </p>
+        </div>
+      </section>
 
-            <p className="text-base md:text-lg text-accent-black/70 leading-relaxed mb-6">
-              Whether you’re celebrating a milestone, planning an event, or simply sending a
-              thoughtful gesture, we’d love to hear from you. Share a few details and we’ll be in
-              touch.
-            </p>
+      <section className="bg-warm-surface px-6 py-16 md:px-12 md:py-20">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 md:grid-cols-[1fr_1.4fr] md:gap-20">
+          {/* Info column */}
+          <div>
+            <ul className="space-y-8">
+              {infoItems.map((item) => (
+                <li key={item.label} className="flex items-start gap-4">
+                  <item.icon size={20} className="mt-1 text-main-text-gold" />
+                  <div>
+                    <p className="text-xs uppercase tracking-widest text-muted-ink">
+                      {item.label}
+                    </p>
+                    {item.href ? (
+                      <a href={item.href} className="text-lg text-accent-black hover:underline">
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="text-lg text-accent-black">{item.value}</p>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
 
-            <div className="w-10 h-px bg-accent-black/30 my-6" />
-
-            {/* Secondary contact blurb */}
-            <p className="text-sm text-accent-black leading-relaxed">
-              Prefer to reach out directly? You’re welcome to call or email us instead. We’re happy
-              to assist in English or Spanish — <span className="italic">hablamos español</span>.
-            </p>
-
-            <p className="text-sm text-accent-black leading-relaxed mt-4">
-              A 50% non-refundable deposit is required to place and secure all orders. Please review
-              our{" "}
-              <Link href="/policy" className="underline font-medium hover:text-black">
-                policies
-              </Link>{" "}
-              for full details before submitting your request.
-            </p>
-
-            <div className="mt-6 space-y-3 text-sm">
-              <div className="flex items-center">
-                <Phone className="mr-2 text-accent-black" />
-                <a href="tel:18139562388" className="hover:text-white transition">
-                  813&nbsp;·&nbsp;956&nbsp;·&nbsp;2388
-                </a>
-              </div>
-
-              <div className="flex items-center">
-                <Mail className="mr-2 text-accent-black" />
-                <a
-                  href="mailto:rosesbylina2025@gmail.com"
-                  className="hover:text-white underline transition"
-                >
-                  rosesbylina2025@gmail.com
-                </a>
-              </div>
+            <div className="mt-10 border-t border-hairline pt-6">
+              <p className="text-sm leading-relaxed text-accent-black/70">
+                A 50% non-refundable deposit is required to place and secure custom orders. Please
+                review our{" "}
+                <Link href="/policy" className="underline font-medium hover:text-black">
+                  policies
+                </Link>{" "}
+                before submitting your request.
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-accent-black/70">
+                Need something ready today?{" "}
+                <Link href="/shop" className="underline font-medium hover:text-black">
+                  Browse our shop
+                </Link>{" "}
+                instead.
+              </p>
             </div>
           </div>
+
           {/* Form */}
-          <ContactForm className="bg-black p-6 md:p-12" />
+          <div className="rounded-2xl bg-accent-black p-6 md:p-10">
+            <ContactForm />
+          </div>
         </div>
       </section>
     </>

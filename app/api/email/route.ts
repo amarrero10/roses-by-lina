@@ -1,6 +1,6 @@
 import { type NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
 import Mail from "nodemailer/lib/mailer";
+import { sendMail, SENDER_EMAIL } from "@/utils/mailer";
 
 export async function POST(request: NextRequest) {
   const { email, name, phone, message, date } = await request.json();
@@ -21,26 +21,11 @@ export async function POST(request: NextRequest) {
 
   console.log(formattedPhoneNumber);
 
-  const transport = nodemailer.createTransport({
-    service: "gmail",
-    /*
-      setting service as 'gmail' is same as providing these setings:
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true
-      If you want to use a different email provider other than gmail, you need to provide these manually.
-      Or you can go use these well known services and their settings at
-      https://github.com/nodemailer/nodemailer/blob/master/lib/well-known/services.json
-  */
-    auth: {
-      user: process.env.MY_EMAIL,
-      pass: process.env.MY_PASSWORD,
-    },
-  });
-
   const mailOptions: Mail.Options = {
-    from: process.env.MY_EMAIL,
-    to: process.env.MY_EMAIL,
+    from: SENDER_EMAIL,
+    // Preview phase: business-side notifications go only to the developer, not the shop
+    // owner, until she's ready to see live traffic. Switch to MY_EMAIL when ready.
+    to: process.env.NOTIFICATION_EMAIL || process.env.MY_EMAIL,
     // cc: email, (uncomment this line if you want to send a copy to the sender)
     subject: `Message from ${name} `,
     text:
@@ -58,7 +43,7 @@ export async function POST(request: NextRequest) {
   };
 
   const mailToClient: Mail.Options = {
-    from: process.env.MY_EMAIL,
+    from: SENDER_EMAIL,
     to: email,
     subject: "Thank You for Contacting Roses by Lina 🌹",
     html: `
@@ -120,23 +105,12 @@ export async function POST(request: NextRequest) {
   `,
   };
 
-  const sendMailPromise = (options: Mail.Options) =>
-    new Promise<string>((resolve, reject) => {
-      transport.sendMail(options, (err) => {
-        if (!err) {
-          resolve("Email sent");
-        } else {
-          reject(err.message);
-        }
-      });
-    });
-
   try {
     // Send email to client
-    await sendMailPromise(mailToClient);
+    await sendMail(mailToClient);
 
     // Send email to business
-    await sendMailPromise(mailOptions);
+    await sendMail(mailOptions);
 
     return NextResponse.json({ message: "Emails sent successfully" });
   } catch (err) {

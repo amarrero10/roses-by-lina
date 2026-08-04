@@ -1,38 +1,38 @@
 import FAQItem from "@/components/FAQItem";
 import Link from "next/link";
+import { Mail } from "lucide-react";
 
 function Faq() {
   const faqs = [
     {
       question: "What types of floral services do you offer?",
       answer:
-        "We create custom floral designs for birthdays, graduations, proposals, weddings, memorials, and everyday occasions.",
+        "We create custom floral designs for birthdays, graduations, proposals, weddings, memorials, and everyday occasions. We also carry a shop of ready-made bouquets and arrangements you can order online right away.",
+    },
+    {
+      question: "What's the difference between the shop and a custom order?",
+      answer:
+        "Our shop has set prices — browse, add to cart, and check out for delivery or pickup. Custom orders (weddings, large events, or a specific vision) are quoted individually — reach out through our contact form for a personalized quote.",
     },
     {
       question: "Do you offer custom arrangements?",
       answer:
-        "Yes. Every arrangement is thoughtfully designed based on your preferences, event details, and seasonal availability.",
+        "Yes. Every custom arrangement is thoughtfully designed based on your preferences, event details, and seasonal availability.",
     },
-    {
-      question: "How far in advance should I place my order?",
-      answer:
-        "For everyday arrangements, 24–48 hours is recommended. Weddings and large events typically require advance notice.",
-    },
-
     {
       question: "Do you offer consultations?",
       answer:
-        "We’re happy to discuss your floral needs via phone, email, or in person. Hablámos español.",
+        "We’re happy to discuss your floral needs via phone, email, or in person. Hablámos español.",
     },
     {
-      question: "How much do your floral arrangements cost?",
+      question: "How much do your custom floral arrangements cost?",
       answer:
-        "Because every arrangement is custom-designed, pricing varies based on size, flower selection, seasonality, and event details. We don’t offer set prices, but we’re happy to work within your budget. For a personalized quote, please contact us by phone or email and we’ll be glad to help.",
+        "Because every custom arrangement is designed to order, pricing varies based on size, flower selection, seasonality, and event details. We don’t offer set prices for custom work, but we’re happy to work within your budget — contact us for a personalized quote. Shop items, by contrast, are priced upfront.",
     },
     {
       question: "How far in advance should I place my order?",
       answer:
-        "For standard floral arrangements, we recommend placing your order at least 48–72 hours in advance. For larger or more involved designs, we ask for a minimum of one month’s notice to ensure availability and proper planning.",
+        "For standard floral arrangements, we recommend placing your order at least 48–72 hours in advance. For larger or more involved designs, we ask for a minimum of one month’s notice to ensure availability and proper planning. Shop orders can be placed for same-day pickup or delivery, subject to availability.",
     },
     {
       question: "Do you offer delivery, and is there a fee?",
@@ -52,56 +52,37 @@ function Faq() {
   ];
 
   return (
-    <>
-      <section className="relative py-32 overflow-hidden">
-        {/* Background image */}
-        {/* <Image src={img} alt="" fill className="object-cover" priority /> */}
-
-        {/* Overlay (important for readability) */}
-        {/* <div className="absolute inset-0 bg-black/30" /> */}
-
-        {/* Content */}
-        <div className="relative z-10 sm:max-w-3xl mx-auto bg-[#fefefe] sm:p-20 p-10 rounded-lg">
-          <h2 className="text-6xl font-light text-center mb-16">
-            Frequently
-            <br />
-            Asked Questions
-          </h2>
-
-          <div>
-            {faqs.map((faq, i) => (
-              <FAQItem key={i} question={faq.question} answer={faq.answer} />
-            ))}
-          </div>
+    <section className="bg-primary-white px-6 py-20 md:px-12 md:py-28">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 md:grid-cols-[1fr_1.6fr] md:gap-20">
+        {/* Sticky intro column */}
+        <div className="md:sticky md:top-28 md:self-start">
+          <span className="mb-4 block font-serif text-sm uppercase tracking-widest text-muted-ink">
+            FAQ
+          </span>
+          <h1 className="mb-6 font-serif text-4xl font-light text-accent-black md:text-6xl">
+            Frequently Asked Questions
+          </h1>
+          <p className="mb-8 text-base leading-relaxed text-muted-ink">
+            Answers about shop orders, custom requests, delivery, and everything in between. Still
+            have a question?
+          </p>
+          <Link
+            href="mailto:albert.marrero10@gmail.com"
+            className="inline-flex items-center gap-2 border border-accent-black px-6 py-3 text-sm uppercase tracking-wide hover:bg-accent-black hover:text-primary-white transition"
+          >
+            <Mail size={16} />
+            Email Us
+          </Link>
         </div>
-      </section>
-      <section className=" py-20">
-        <h2 className="sm:text-6xl px-3 sm:px-0 text-4xl font-light text-center mb-16">
-          Not finding the answers you’re looking for? Get in touch!
-        </h2>
-        <div className="max-w-5xl mx-auto flex justify-center text-center">
-          {/* Phone */}
 
-          {/* Email */}
-          <div>
-            <div className="mb-4 text-black/60">
-              <span className="text-3xl">✉️</span>
-            </div>
-
-            <h3 className="uppercase tracking-widest text-sm mb-2">Have a Question?</h3>
-
-            <p className="text-sm text-black/60 mb-4">Click below to send us a message.</p>
-
-            <Link
-              href="mailto:rosesbylina2025@gmail.com"
-              className="inline-block border border-black px-8 py-3 text-sm uppercase tracking-wide hover:bg-black hover:text-white transition"
-            >
-              Contact Us
-            </Link>
-          </div>
+        {/* Accordion column */}
+        <div>
+          {faqs.map((faq, i) => (
+            <FAQItem key={i} question={faq.question} answer={faq.answer} />
+          ))}
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }
 

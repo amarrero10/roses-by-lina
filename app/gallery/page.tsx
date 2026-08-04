@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
+import Link from "next/link";
 
 const images: string[] = [
   "/1.jpg",
@@ -40,6 +41,8 @@ const images: string[] = [
   "/32.jpg",
 ];
 
+const aspectRatios = ["aspect-[3/4]", "aspect-square", "aspect-[4/5]", "aspect-[3/5]"];
+
 const Gallery = () => {
   const [selected, setSelected] = useState<string | null>(null);
   useEffect(() => {
@@ -63,25 +66,46 @@ const Gallery = () => {
   }, []);
 
   return (
-    <section className="bg-[#f4efe9] py-32">
-      <div className=" mx-10">
-        {/* Heading */}
-        <h1 className="text-8xl font-light text-center mb-20 font-serif">Gallery</h1>
+    <section className="bg-warm-surface px-6 py-20 md:px-12 md:py-28">
+      <div className="mx-auto max-w-7xl">
+        {/* Intro */}
+        <div className="mx-auto mb-16 max-w-2xl text-center">
+          <span className="mb-4 block font-serif text-sm uppercase tracking-widest text-muted-ink">
+            Portfolio
+          </span>
+          <h1 className="mb-4 font-serif text-4xl font-light text-accent-black md:text-6xl">
+            Gallery
+          </h1>
+          <p className="text-base text-muted-ink leading-relaxed">
+            A look at custom designs we&apos;ve created for weddings, celebrations, and everyday
+            moments.
+          </p>
+        </div>
 
-        {/* Grid */}
-        <motion.div layout className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6 ">
-          {images.map((src) => (
+        {/* Masonry-style grid */}
+        <div className="columns-2 gap-4 sm:columns-3 lg:columns-4">
+          {images.map((src, i) => (
             <motion.div
               key={src}
               layout
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.03 }}
               onClick={() => setSelected(src)}
-              className="relative aspect-4/5 cursor-pointer overflow-hidden "
+              className={`relative mb-4 w-full cursor-pointer overflow-hidden break-inside-avoid rounded-sm ${aspectRatios[i % aspectRatios.length]}`}
             >
-              <Image src={src} alt="" fill className="object-cover" />
+              <Image src={src} alt="" fill className="object-cover" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw" />
             </motion.div>
           ))}
-        </motion.div>
+        </div>
+
+        <div className="mt-16 text-center">
+          <p className="mb-4 text-muted-ink">Like what you see?</p>
+          <Link
+            href="/services"
+            className="inline-block border border-accent-black px-8 py-3 text-sm uppercase tracking-wide hover:bg-accent-black hover:text-primary-white transition"
+          >
+            Start a Custom Order
+          </Link>
+        </div>
       </div>
 
       {/* Modal */}
@@ -101,6 +125,7 @@ const Gallery = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.2 }}
+              aria-label="Close"
               className="absolute top-6 right-6 z-50 text-white text-3xl font-light hover:opacity-70"
             >
               <X className=" cursor-pointer " size={40} />

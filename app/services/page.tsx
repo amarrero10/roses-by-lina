@@ -10,7 +10,6 @@ import { useEffect, useRef } from "react";
 import Lenis from "lenis";
 import ServicesHero from "@/components/ServicesHero";
 import ContactForm from "@/components/ContactForm";
-import { Mail, Phone } from "lucide-react";
 import { Suspense } from "react";
 import Link from "next/link";
 
@@ -47,67 +46,31 @@ export default function Services() {
           <Section5 scrollYProgress={scrollYProgress} />
         </main>
       </div>
-      <section className="bg-accent-black py-16 md:py-20">
-        <div
-          className="
-      max-w-4xl sm:max-w-7xl mx-auto
-      grid grid-cols-1 md:grid-cols-2
-      gap-12 md:gap-24
-      items-start
-      bg-accent-text-purple
-    "
-        >
-          {/* Text */}
-          <div className="text-accent-black p-6 md:p-10">
-            <h2 className="text-3xl md:text-5xl font-light mb-4 md:mb-6">
-              Let’s Create Something Beautiful
-            </h2>
+      <section className="bg-accent-black py-20 md:py-28">
+        <div className="mx-auto max-w-xl px-6 text-center">
+          <span className="mb-4 block font-serif text-sm uppercase tracking-widest text-main-text-gold">
+            Start Your Request
+          </span>
+          <h2 className="mb-4 font-serif text-3xl font-light text-primary-white md:text-5xl">
+            Tell Us About Your Event
+          </h2>
+          <p className="mb-2 text-base leading-relaxed text-primary-white/70">
+            Share a few details below and we&apos;ll follow up with a personalized quote. A 50%
+            non-refundable deposit secures your date — see our{" "}
+            <Link href="/policy" className="underline hover:text-primary-white">
+              full policy
+            </Link>
+            .
+          </p>
+          <p className="mb-10 text-sm text-primary-white/50">
+            Need something ready today instead?{" "}
+            <Link href="/shop" className="underline hover:text-primary-white">
+              Browse the shop
+            </Link>
+            .
+          </p>
 
-            <p className="text-base md:text-lg text-accent-black/70 leading-relaxed mb-6">
-              Whether you’re celebrating a milestone, planning an event, or simply sending a
-              thoughtful gesture, we’d love to hear from you. Share a few details and we’ll be in
-              touch.
-            </p>
-
-            <div className="w-10 h-px bg-accent-black/30 my-6" />
-
-            {/* Secondary contact blurb */}
-            <p className="text-sm text-accent-black leading-relaxed">
-              Prefer to reach out directly? You’re welcome to call or email us instead. We’re happy
-              to assist in English or Spanish — <span className="italic">hablamos español</span>.
-            </p>
-
-            <p className="text-sm text-accent-black leading-relaxed mt-4">
-              A 50% non-refundable deposit is required to place and secure all orders. Please review
-              our{" "}
-              <Link href="/policy" className="underline font-medium hover:text-black">
-                policies
-              </Link>{" "}
-              for full details before submitting your request.
-            </p>
-
-            <div className="mt-6 space-y-3 text-sm">
-              <div className="flex items-center">
-                <Phone className="mr-2 text-accent-black" />
-                <a href="tel:18139562388" className="hover:text-white transition">
-                  813&nbsp;·&nbsp;956&nbsp;·&nbsp;2388
-                </a>
-              </div>
-
-              <div className="flex items-center">
-                <Mail className="mr-2 text-accent-black" />
-                <a
-                  href="mailto:rosesbylina2025@gmail.com"
-                  className="hover:text-white underline transition"
-                >
-                  rosesbylina2025@gmail.com
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Form */}
-          <ContactForm className="bg-black p-6 md:p-12" />
+          <ContactForm className="text-left" />
         </div>
       </section>
     </>
@@ -126,7 +89,7 @@ const Section1 = ({ scrollYProgress }: { scrollYProgress: MotionValue<number> })
         h-[700px] md:h-[800px]
         mb-10
         grid grid-cols-1 md:grid-cols-2
-        bg-[#faf8f6]
+        bg-warm-surface
         rounded-2xl
       "
     >
@@ -149,19 +112,19 @@ const Section1 = ({ scrollYProgress }: { scrollYProgress: MotionValue<number> })
       {/* Text */}
       <div className="flex items-center px-8 md:px-24">
         <div className="max-w-md">
-          <span className="block text-sm uppercase tracking-widest text-gray-400 mb-4">
+          <span className="block text-sm uppercase tracking-widest text-muted-ink mb-4">
             Floral Services
           </span>
 
-          <div className="w-12 h-px bg-gray-600 mb-6" />
+          <div className="w-12 h-px bg-accent-black/30 mb-6" />
 
-          <h1 className="text-4xl md:text-6xl font-light mb-6 leading-tight text-gray-600">
+          <h1 className="text-4xl md:text-6xl font-light mb-6 leading-tight text-accent-black/70">
             Custom Floral
             <br />
             Arrangements
           </h1>
 
-          <p className="text-base md:text-lg leading-relaxed text-gray-600">
+          <p className="text-base md:text-lg leading-relaxed text-accent-black/70">
             Designed for everyday moments and meaningful gestures — from birthdays and celebrations
             to “just because.”
           </p>
@@ -209,24 +172,24 @@ const Section2 = ({ scrollYProgress }: { scrollYProgress: MotionValue<number> })
         className="
           flex items-center
           px-8 md:px-24
-          bg-[#faf8f6]
+          bg-warm-surface
           rounded-b-2xl md:rounded-bl-2xl
           md:rounded-br-none
           min-h-[400px]
         "
       >
         <div className="max-w-md">
-          <span className="block text-sm uppercase tracking-widest text-gray-400 mb-4">
+          <span className="block text-sm uppercase tracking-widest text-muted-ink mb-4">
             Celebrations
           </span>
 
-          <div className="w-12 h-px bg-gray-600 mb-6" />
+          <div className="w-12 h-px bg-accent-black/30 mb-6" />
 
-          <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-600">
+          <h2 className="text-4xl md:text-5xl font-light mb-6 text-accent-black/70">
             Birthdays & Graduations
           </h2>
 
-          <p className="text-base md:text-lg leading-relaxed text-gray-600">
+          <p className="text-base md:text-lg leading-relaxed text-accent-black/70">
             Thoughtfully designed floral arrangements that celebrate milestones, joy, and meaningful
             moments.
           </p>
@@ -280,15 +243,15 @@ const Section3 = ({ scrollYProgress }: { scrollYProgress: MotionValue<number> })
         "
       >
         <div className="max-w-md">
-          <span className="block text-sm uppercase tracking-widest text-gray-400 mb-4">
+          <span className="block text-sm uppercase tracking-widest text-muted-ink mb-4">
             Special Moments
           </span>
 
-          <div className="w-12 h-px bg-gray-600 mb-6" />
+          <div className="w-12 h-px bg-accent-black/30 mb-6" />
 
-          <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-600">Proposals</h2>
+          <h2 className="text-4xl md:text-5xl font-light mb-6 text-accent-black/70">Proposals</h2>
 
-          <p className="text-base md:text-lg leading-relaxed text-gray-600">
+          <p className="text-base md:text-lg leading-relaxed text-accent-black/70">
             From intimate gestures to grand displays, our florals help create moments that feel
             unforgettable and deeply personal.
           </p>
@@ -334,24 +297,24 @@ const Section4 = ({ scrollYProgress }: { scrollYProgress: MotionValue<number> })
         className="
           flex items-center
           px-8 md:px-24
-          bg-[#faf8f6]
+          bg-warm-surface
           rounded-b-2xl md:rounded-bl-2xl
           md:rounded-br-none
           min-h-[400px]
         "
       >
         <div className="max-w-md">
-          <span className="block text-sm uppercase tracking-widest text-gray-400 mb-4">
+          <span className="block text-sm uppercase tracking-widest text-muted-ink mb-4">
             Life Events
           </span>
 
-          <div className="w-12 h-px bg-gray-600 mb-6" />
+          <div className="w-12 h-px bg-accent-black/30 mb-6" />
 
-          <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-600">
+          <h2 className="text-4xl md:text-5xl font-light mb-6 text-accent-black/70">
             Weddings & Memorials
           </h2>
 
-          <p className="text-base md:text-lg leading-relaxed text-gray-600">
+          <p className="text-base md:text-lg leading-relaxed text-accent-black/70">
             Carefully curated floral designs created with intention, beauty, and respect — honoring
             love, life, and memory.
           </p>
@@ -395,20 +358,20 @@ const Section5 = ({ scrollYProgress }: { scrollYProgress: MotionValue<number> })
         className="
           flex items-center
           px-8 md:px-24
-          bg-[#faf8f6]
+          bg-warm-surface
           min-h-[400px]
         "
       >
         <div className="max-w-md">
-          <span className="block text-sm uppercase tracking-widest text-gray-400 mb-4">
+          <span className="block text-sm uppercase tracking-widest text-muted-ink mb-4">
             Signature Designs
           </span>
 
-          <div className="w-12 h-px bg-gray-600 mb-6" />
+          <div className="w-12 h-px bg-accent-black/30 mb-6" />
 
-          <h2 className="text-4xl md:text-5xl font-light mb-6 text-gray-600">Boxed Arrangements</h2>
+          <h2 className="text-4xl md:text-5xl font-light mb-6 text-accent-black/70">Boxed Arrangements</h2>
 
-          <p className="text-base md:text-lg leading-relaxed text-gray-600">
+          <p className="text-base md:text-lg leading-relaxed text-accent-black/70">
             Elegant boxed floral arrangements designed for effortless gifting. Thoughtfully styled
             and beautifully presented, each box is perfect for surprises, celebrations, or simply
             making someone’s day feel extra special.

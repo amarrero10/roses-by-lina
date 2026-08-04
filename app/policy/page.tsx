@@ -18,152 +18,170 @@ const fadeUp: Variants = {
   }),
 };
 
+const sections = [
+  {
+    id: "deposit",
+    title: "Deposit & Payment",
+    body: (
+      <>
+        <p className="text-accent-black/70 leading-relaxed">
+          A <span className="font-medium">50% deposit is required</span> to place any custom
+          order. This deposit is <span className="font-medium uppercase">non-refundable</span> and
+          confirms your order in our schedule.
+        </p>
+        <p className="text-accent-black/70 leading-relaxed mt-4">
+          Orders <span className="font-medium">will not be placed</span> without a deposit.
+        </p>
+        <div className="mt-4 text-sm text-muted-ink">
+          Accepted payment methods: <strong>Zelle, Apple Pay, Cash App, and Cash.</strong>
+          <br />
+          <span className="uppercase font-medium">No checks accepted.</span>
+        </div>
+      </>
+    ),
+  },
+  {
+    id: "delivery",
+    title: "Delivery & Pickup",
+    body: (
+      <>
+        <p className="text-accent-black/70 leading-relaxed">
+          Delivery fees are based on location and will be discussed prior to confirmation.
+          <span className="font-medium"> Pickup is always free.</span>
+        </p>
+        <p className="text-accent-black/70 leading-relaxed mt-4">
+          We <span className="font-medium uppercase">do not ship</span> flowers.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "rush-orders",
+    title: "Last-Minute Orders",
+    body: (
+      <>
+        <p className="text-accent-black/70 leading-relaxed">
+          Orders must be placed at least <span className="font-medium">24 hours in advance</span>.
+        </p>
+        <p className="text-accent-black/70 leading-relaxed mt-2">
+          A <span className="font-medium">$20 rush fee</span> will apply to last-minute requests
+          and is subject to availability.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "unclaimed",
+    title: "Unclaimed Orders",
+    body: (
+      <>
+        <p className="text-accent-black/70 leading-relaxed">
+          If flowers are not picked up at the agreed-upon time, the order will be considered
+          forfeited.
+        </p>
+        <p className="text-accent-black/70 leading-relaxed mt-2">
+          The product will be lost and the{" "}
+          <span className="font-medium">deposit will not be refunded</span> for both pre-made and
+          custom orders.
+        </p>
+      </>
+    ),
+  },
+  {
+    id: "liability",
+    title: "Liability",
+    body: (
+      <p className="text-accent-black/70 leading-relaxed">
+        Once flowers are handed over to the client or recipient,
+        <span className="font-medium"> we are not responsible</span> for damage, care,
+        environmental conditions, or handling.
+      </p>
+    ),
+  },
+  {
+    id: "communication",
+    title: "Communication",
+    body: (
+      <p className="text-accent-black/70 leading-relaxed">
+        Any questions, changes, or concerns must be communicated{" "}
+        <span className="font-medium underline">prior to delivery or pickup</span>.
+      </p>
+    ),
+  },
+];
+
 export default function PolicyPage() {
   return (
-    <section className="bg-[#faf8f6] py-20 md:py-28">
-      <div className="max-w-3xl mx-auto px-6 md:px-0">
-        {/* Header */}
+    <section className="bg-warm-surface px-6 py-20 md:px-12 md:py-28">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 md:grid-cols-[220px_1fr] md:gap-16">
+        {/* Sticky table of contents */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeUp}
+          className="md:sticky md:top-28 md:self-start"
         >
-          <h1 className="text-4xl md:text-6xl font-light text-gray-700 mb-6">
-            Policies & Important Information
+          <h1 className="mb-6 font-serif text-3xl font-light text-accent-black md:text-4xl">
+            Policies
           </h1>
-
-          <p className="text-base md:text-lg text-gray-500 leading-relaxed">
-            Please review our policies carefully before placing an order. These guidelines ensure
-            clarity, fairness, and the best experience for everyone.
-          </p>
+          <nav className="hidden md:block">
+            <ul className="space-y-3 text-sm">
+              {sections.map((s) => (
+                <li key={s.id}>
+                  <a href={`#${s.id}`} className="text-muted-ink hover:text-accent-black">
+                    {s.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </motion.div>
 
-        <div className="mt-16 space-y-12">
-          {/* Deposit */}
-          <motion.div
-            variants={fadeUp}
+        {/* Content */}
+        <div>
+          <motion.p
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-          >
-            <h2 className="text-2xl font-light text-gray-700 mb-4">Deposit & Payment</h2>
-            <p className="text-gray-600 leading-relaxed">
-              A <span className="font-medium">50% deposit is required</span> to place any order.
-              This deposit is <span className="font-medium uppercase">non-refundable</span> and
-              confirms your order in our schedule.
-            </p>
-
-            <p className="text-gray-600 leading-relaxed mt-4">
-              Orders <span className="font-medium">will not be placed</span> without a deposit.
-            </p>
-
-            <div className="mt-4 text-sm text-gray-500">
-              Accepted payment methods: <strong>Zelle, Apple Pay, Cash App, and Cash.</strong>
-              <br />
-              <span className="uppercase font-medium">No checks accepted.</span>
-            </div>
-          </motion.div>
-
-          {/* Delivery */}
-          <motion.div
             variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
+            className="mb-12 max-w-xl text-base md:text-lg text-muted-ink leading-relaxed"
           >
-            <h2 className="text-2xl font-light text-gray-700 mb-4">Delivery & Pickup</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Delivery fees are based on location and will be discussed prior to confirmation.
-              <span className="font-medium"> Pickup is always free.</span>
-            </p>
+            Please review these policies carefully before placing a custom order. They ensure
+            clarity, fairness, and the best experience for everyone. (Shop orders follow the same
+            payment methods, minus the deposit requirement — full total is confirmed at checkout.)
+          </motion.p>
 
-            <p className="text-gray-600 leading-relaxed mt-4">
-              We <span className="font-medium uppercase">do not ship</span> flowers.
-            </p>
-          </motion.div>
+          <div className="space-y-12">
+            {sections.map((s, i) => (
+              <motion.div
+                key={s.id}
+                id={s.id}
+                variants={fadeUp}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                className="scroll-mt-28"
+              >
+                <h2 className="text-2xl font-light text-accent-black mb-4">{s.title}</h2>
+                {s.body}
+              </motion.div>
+            ))}
 
-          {/* Rush Orders */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <h2 className="text-2xl font-light text-gray-700 mb-4">Last-Minute Orders</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Orders must be placed at least{" "}
-              <span className="font-medium">24 hours in advance</span>.
-            </p>
-
-            <p className="text-gray-600 leading-relaxed mt-2">
-              A <span className="font-medium">$20 rush fee</span> will apply to last-minute requests
-              and is subject to availability.
-            </p>
-          </motion.div>
-
-          {/* Pickup Responsibility */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <h2 className="text-2xl font-light text-gray-700 mb-4">Unclaimed Orders</h2>
-            <p className="text-gray-600 leading-relaxed">
-              If flowers are not picked up at the agreed-upon time, the order will be considered
-              forfeited.
-            </p>
-
-            <p className="text-gray-600 leading-relaxed mt-2">
-              The product will be lost and the{" "}
-              <span className="font-medium">deposit will not be refunded </span>
-              for both pre-made and custom orders.
-            </p>
-          </motion.div>
-
-          {/* Liability */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <h2 className="text-2xl font-light text-gray-700 mb-4">Liability</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Once flowers are handed over to the client or recipient,
-              <span className="font-medium"> we are not responsible</span> for damage, care,
-              environmental conditions, or handling.
-            </p>
-          </motion.div>
-
-          {/* Communication */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <h2 className="text-2xl font-light text-gray-700 mb-4">Communication</h2>
-            <p className="text-gray-600 leading-relaxed">
-              Any questions, changes, or concerns must be communicated{" "}
-              <span className="font-medium underline">prior to delivery or pickup</span>.
-            </p>
-          </motion.div>
-
-          {/* Agreement */}
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="border-t pt-8"
-          >
-            <p className="text-sm md:text-base text-gray-500 leading-relaxed">
-              By placing an order, you acknowledge that you have read, understood, and agreed to all
-              policies listed above.
-            </p>
-          </motion.div>
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="border-t border-hairline pt-8"
+            >
+              <p className="text-sm md:text-base text-muted-ink leading-relaxed">
+                By placing an order, you acknowledge that you have read, understood, and agreed to
+                all policies listed above.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

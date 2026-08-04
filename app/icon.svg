@@ -1,0 +1,5 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Roses by Lina">
+  <rect width="64" height="64" fill="#141616"/>
+  <circle cx="32" cy="32" r="21" stroke="#c7a552" stroke-width="1.4" fill="none"/>
+  <text x="32" y="41" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="500" font-size="20" fill="#fefefe">RL</text>
+</svg>

@@ -4,6 +4,7 @@ import Navigation from "@/components/layout/Navigation";
 import { Poppins, Playfair_Display, Montserrat } from "next/font/google";
 import Footer from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/next";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -27,10 +28,6 @@ export const metadata: Metadata = {
   title: "Roses by Lina",
   description:
     "Roses by Lina creates custom floral arrangements for weddings, events, and everyday moments. Elegant, handcrafted flowers designed with care.",
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
 };
 
 export default function RootLayout({
@@ -43,9 +40,11 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${montserrat.variable} ${poppins.variable} antialiased h-screen`}
       >
-        <Navigation />
-        {children}
-        <Footer />
+        <ClerkProvider>
+          <Navigation />
+          {children}
+          <Footer />
+        </ClerkProvider>
         <Analytics />
       </body>
     </html>

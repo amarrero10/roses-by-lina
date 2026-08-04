@@ -16,13 +16,15 @@ nav a:hover {
 
 :root {
   --color-primary: #fefefe;
-  --color-secondary: #78a57b;
+  --color-warm-surface: #f7f2ea;
   --color-accent: #141616;
   --button-text: #fefefe;
   --button-bg: #141616;
   --main-text: #c7a552;
-  --secondary-text: #78a57b;
   --accent-text: #d7b7f0;
+  --color-hairline: rgba(20, 22, 22, 0.12);
+  --color-hairline-inverse: rgba(254, 254, 254, 0.2);
+  --color-muted-ink: #6b6459;
   --serif: "Playfair Display", serif;
   --sans: "Montserrat", sans-serif;
   --poppins: "Poppins", sans-serif;
@@ -30,13 +32,15 @@ nav a:hover {
 
 @theme inline {
   --color-primary-white: var(--color-primary);
-  --color-secondary-green: var(--color-secondary);
+  --color-warm-surface: var(--color-warm-surface);
   --color-accent-black: var(--color-accent);
   --color-button-text-white: var(--button-text);
   --color-button-bg-black: var(--button-bg);
   --color-main-text-gold: var(--main-text);
-  --color-secondary-text-green: var(--secondary-text);
   --color-accent-text-purple: var(--accent-text);
+  --color-hairline: var(--color-hairline);
+  --color-hairline-inverse: var(--color-hairline-inverse);
+  --color-muted-ink: var(--color-muted-ink);
   --font-serif: var(--serif);
   --font-sans: var(--sans);
   --font-poppins: var(--poppins);

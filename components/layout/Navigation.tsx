@@ -3,11 +3,22 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Instagram, Facebook } from "@deemlol/next-icons";
-import logo from "@/public/logo.jpg"; // adjust your logo path
+import logo from "@/public/logo-mark-paper.svg";
 import TikTok from "../ui/TikTok";
 import { motion } from "framer-motion";
+import CartIndicator from "./CartIndicator";
+
+const links = [
+  { href: "/shop", label: "Shop" },
+  { href: "/services", label: "Custom Orders" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/about", label: "About" },
+  { href: "/faq", label: "FAQ" },
+  { href: "/contact-us", label: "Contact" },
+];
 
 type FlipLinkProps = {
   href: string;
@@ -17,33 +28,54 @@ type FlipLinkProps = {
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
-    <nav className="relative mx-auto bg-accent-black 2xl:px-96 z-50 w-full">
+    <nav className="sticky top-0 z-50 w-full bg-accent-black">
       {/* Top bar */}
-      <div className="flex items-center justify-between px-8 py-4">
-        <div className="flex items-center gap-2">
-          <Link href="/">
-            <Image src={logo} alt="Logo" width={60} height={60} className="rounded" />
-          </Link>
+      <div className="flex items-center justify-between px-6 py-4 lg:px-12">
+        <Link href="/" className="shrink-0">
+          <Image src={logo} alt="Roses by Lina" width={48} height={48} />
+        </Link>
+
+        {/* Desktop nav */}
+        <div className="hidden items-center gap-9 font-serif text-sm uppercase tracking-widest text-primary-white lg:flex">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`relative pb-1 transition-colors hover:text-main-text-gold ${
+                pathname === link.href ? "text-main-text-gold" : ""
+              }`}
+            >
+              {link.label}
+              {pathname === link.href && (
+                <span className="absolute -bottom-0.5 left-0 h-px w-full bg-main-text-gold" />
+              )}
+            </Link>
+          ))}
         </div>
 
-        {/* Hamburger */}
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="text-primary-white hover:opacity-80 transition cursor-pointer "
-        >
-          {isOpen ? (
-            <X size={32} className="text-main-text-gold" />
-          ) : (
-            <Menu size={32} className="text-main-text-gold" />
-          )}
-        </button>
+        <div className="flex items-center gap-6">
+          <CartIndicator />
+          {/* Hamburger — mobile / tablet only */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            className="text-primary-white hover:opacity-80 transition cursor-pointer lg:hidden"
+          >
+            {isOpen ? (
+              <X size={30} className="text-main-text-gold" />
+            ) : (
+              <Menu size={30} className="text-main-text-gold" />
+            )}
+          </button>
+        </div>
       </div>
 
-      {/* Dropdown menu */}
+      {/* Mobile dropdown menu */}
       <div
-        className={`absolute top-full left-0 w-full bg-accent-black text-main-text-gold transition-all duration-500 ease-in-out overflow-hidden ${
+        className={`absolute top-full left-0 w-full bg-accent-black text-main-text-gold transition-all duration-500 ease-in-out overflow-hidden lg:hidden ${
           isOpen ? "h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >
@@ -52,21 +84,11 @@ const Navigation = () => {
             <FlipLink href="/" onClick={() => setIsOpen(false)}>
               Home
             </FlipLink>
-            <FlipLink href="/about" onClick={() => setIsOpen(false)}>
-              About
-            </FlipLink>
-            <FlipLink href="/services" onClick={() => setIsOpen(false)}>
-              Services
-            </FlipLink>
-            <FlipLink href="/gallery" onClick={() => setIsOpen(false)}>
-              Gallery
-            </FlipLink>
-            <FlipLink href="/faq" onClick={() => setIsOpen(false)}>
-              FAQ
-            </FlipLink>
-            <FlipLink href="/contact-us" onClick={() => setIsOpen(false)}>
-              Contact
-            </FlipLink>
+            {links.map((link) => (
+              <FlipLink key={link.href} href={link.href} onClick={() => setIsOpen(false)}>
+                {link.label}
+              </FlipLink>
+            ))}
             <FlipLink href="/policy" onClick={() => setIsOpen(false)}>
               Policy
             </FlipLink>
