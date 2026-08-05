@@ -25,7 +25,7 @@ export default async function ShopPage({ searchParams }: ShopPageProps) {
 
   return (
     <>
-      <section className="relative flex h-[45vh] min-h-[320px] items-end overflow-hidden">
+      <section className="relative flex h-[45vh] min-h-80 items-end overflow-hidden">
         <Image
           src={bannerImg}
           alt="Fresh floral arrangements from Roses by Lina"
